@@ -1,11 +1,10 @@
-name: "Update codecs"
+name: "Multicodecs submodule update"
 on:
   schedule:
     - cron: "0 0 * * *" # Every day at 7 minutes after midnight (everyone runs at 00:00, let's be nice to GH)
-  watch:
-    types: [started]
+
 jobs:
-  stale:
+  update:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out repository
@@ -14,7 +13,7 @@ jobs:
           submodules: recursive
 
       - name: Updating multicodec submodule
-        run: git pull origin master
+        run: git fetch && git checkout origin/master
         working-directory: multicodec
 
       - name: Getting hash of latest multicodec
@@ -25,7 +24,11 @@ jobs:
       - name: Generating files
         run: go generate
 
-      - name: Create Pull Request
+      - name: Creating Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Update multicodec to revision ${{ steps.multicodec-head.outputs.hash }}
+          commit-message: Update multicodec submodule to revision ${{ steps.multicodec-head.outputs.hash }}
+          branch: autoupdate/multicodec
+          delete-branch: true
+          title: Autoupdate multicodec submodule
+          body: "@dennis-tra Detected changes while updating the multicodec submodule."
