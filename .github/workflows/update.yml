@@ -1,0 +1,31 @@
+name: "Update codecs"
+on:
+  schedule:
+    - cron: "0 0 * * *" # Every day at 7 minutes after midnight (everyone runs at 00:00, let's be nice to GH)
+  watch:
+    types: [started]
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Updating multicodec submodule
+        run: git pull origin master
+        working-directory: multicodec
+
+      - name: Getting hash of latest multicodec
+        id: multicodec-head
+        run: echo "::set-output name=hash::$(git rev-parse --short HEAD)"
+        working-directory: multicodec
+
+      - name: Generating files
+        run: go generate
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update multicodec to revision ${{ steps.multicodec-head.outputs.hash }}
