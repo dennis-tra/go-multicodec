@@ -1,8 +1,5 @@
-name: "Update multicodecs"
+name: "Multicodecs submodule update"
 on:
-  push:
-    branches:
-      - gh-action
   schedule:
     - cron: "0 0 * * *" # Every day at 7 minutes after midnight (everyone runs at 00:00, let's be nice to GH)
 
@@ -27,7 +24,7 @@ jobs:
       - name: Generating files
         run: go generate
 
-      - name: Create Pull Request
+      - name: Creating Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
           commit-message: Update multicodec submodule to revision ${{ steps.multicodec-head.outputs.hash }}
