@@ -1,4 +1,4 @@
-name: "Update codecs"
+name: "Update multicodecs"
 on:
   push:
     branches:
@@ -16,7 +16,7 @@ jobs:
           submodules: recursive
 
       - name: Updating multicodec submodule
-        run: git pull origin master --rebase
+        run: git fetch && git checkout origin/master
         working-directory: multicodec
 
       - name: Getting hash of latest multicodec
