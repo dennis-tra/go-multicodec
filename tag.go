@@ -119,34 +119,32 @@ var IpldCodecToStr = map[Codec]string{
 
 // KeyCodec maps the name of a codec with tag "key" to its type
 var KeyCodec = map[string]Codec{
-	"secp256k1-pub":      Secp256k1Pub,
-	"bls12_381-g1-pub":   Bls12381G1Pub,
-	"bls12_381-g2-pub":   Bls12381G2Pub,
-	"x25519-pub":         X25519Pub,
-	"ed25519-pub":        Ed25519Pub,
-	"bls12_381-g1g2-pub": Bls12381G1g2Pub,
-	"p256-pub":           P256Pub,
-	"p384-pub":           P384Pub,
-	"p521-pub":           P521Pub,
-	"ed448-pub":          Ed448Pub,
-	"x448-pub":           X448Pub,
-	"ed25519-priv":       Ed25519Priv,
+	"secp256k1-pub":    Secp256k1Pub,
+	"bls12_381-g1-pub": Bls12381G1Pub,
+	"bls12_381-g2-pub": Bls12381G2Pub,
+	"x25519-pub":       X25519Pub,
+	"ed25519-pub":      Ed25519Pub,
+	"p256-pub":         P256Pub,
+	"p384-pub":         P384Pub,
+	"p521-pub":         P521Pub,
+	"ed448-pub":        Ed448Pub,
+	"x448-pub":         X448Pub,
+	"ed25519-priv":     Ed25519Priv,
 }
 
 // KeyCodecToStr maps the numeric codec with tag "key" to its name
 var KeyCodecToStr = map[Codec]string{
-	Secp256k1Pub:    "secp256k1-pub",
-	Bls12381G1Pub:   "bls12_381-g1-pub",
-	Bls12381G2Pub:   "bls12_381-g2-pub",
-	X25519Pub:       "x25519-pub",
-	Ed25519Pub:      "ed25519-pub",
-	Bls12381G1g2Pub: "bls12_381-g1g2-pub",
-	P256Pub:         "p256-pub",
-	P384Pub:         "p384-pub",
-	P521Pub:         "p521-pub",
-	Ed448Pub:        "ed448-pub",
-	X448Pub:         "x448-pub",
-	Ed25519Priv:     "ed25519-priv",
+	Secp256k1Pub:  "secp256k1-pub",
+	Bls12381G1Pub: "bls12_381-g1-pub",
+	Bls12381G2Pub: "bls12_381-g2-pub",
+	X25519Pub:     "x25519-pub",
+	Ed25519Pub:    "ed25519-pub",
+	P256Pub:       "p256-pub",
+	P384Pub:       "p384-pub",
+	P521Pub:       "p521-pub",
+	Ed448Pub:      "ed448-pub",
+	X448Pub:       "x448-pub",
+	Ed25519Priv:   "ed25519-priv",
 }
 
 // Libp2pCodec maps the name of a codec with tag "libp2p" to its type
@@ -956,7 +954,6 @@ var MultihashCodecToStr = map[Codec]string{
 // NamespaceCodec maps the name of a codec with tag "namespace" to its type
 var NamespaceCodec = map[string]Codec{
 	"path":     Path,
-	"docid":    Docid,
 	"ipld-ns":  IpldNs,
 	"ipfs-ns":  IpfsNs,
 	"swarm-ns": SwarmNs,
@@ -967,7 +964,6 @@ var NamespaceCodec = map[string]Codec{
 // NamespaceCodecToStr maps the numeric codec with tag "namespace" to its name
 var NamespaceCodecToStr = map[Codec]string{
 	Path:    "path",
-	Docid:   "docid",
 	IpldNs:  "ipld-ns",
 	IpfsNs:  "ipfs-ns",
 	SwarmNs: "swarm-ns",
