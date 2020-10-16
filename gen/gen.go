@@ -7,6 +7,7 @@ import (
 	"encoding/csv"
 	"log"
 	"os"
+	"path"
 	"sort"
 	"strings"
 	"text/template"
@@ -27,7 +28,7 @@ type TemplateData struct {
 
 func main() {
 
-	table, err := os.Open("multicodec/table.csv")
+	table, err := os.Open(path.Join("multicodec", "table.csv"))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -78,7 +79,11 @@ func main() {
 
 	for _, templateName := range templates {
 
-		t, err := template.New(templateName + ".go.tpl").Funcs(funcMap).ParseFiles("templates/" + templateName + ".go.tpl")
+		tplFileName := templateName + ".go.tpl"
+		t, err := template.
+			New(tplFileName).
+			Funcs(funcMap).
+			ParseFiles(path.Join("templates", tplFileName))
 		if err != nil {
 			log.Fatal(err)
 		}
