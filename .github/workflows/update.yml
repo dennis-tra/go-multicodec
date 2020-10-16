@@ -5,10 +5,9 @@ on:
       - gh-action
   schedule:
     - cron: "0 0 * * *" # Every day at 7 minutes after midnight (everyone runs at 00:00, let's be nice to GH)
-  watch:
-    types: [started]
+
 jobs:
-  stale:
+  update:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out repository
@@ -17,7 +16,7 @@ jobs:
           submodules: recursive
 
       - name: Updating multicodec submodule
-        run: git pull origin master
+        run: git pull origin master --rebase
         working-directory: multicodec
 
       - name: Getting hash of latest multicodec
