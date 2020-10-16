@@ -138,6 +138,8 @@ const (
 	ZcashBlock Codec = 0xc0
 	// ipld: Zcash Tx
 	ZcashTx Codec = 0xc1
+	// namespace: Ceramic Document Id
+	Docid Codec = 0xce
 	// ipld: Stellar Block
 	StellarBlock Codec = 0xd0
 	// ipld: Stellar Tx
@@ -172,6 +174,8 @@ const (
 	X25519Pub Codec = 0xec
 	// key: Ed25519 public key
 	Ed25519Pub Codec = 0xed
+	// key: BLS12-381 concatenated public keys in both the G1 and G2 fields
+	Bls12381G1g2Pub Codec = 0xee
 	// ipld: Dash Block
 	DashBlock Codec = 0xf0
 	// ipld: Dash Tx
