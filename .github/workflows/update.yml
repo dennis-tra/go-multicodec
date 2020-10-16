@@ -1,5 +1,8 @@
 name: "Update codecs"
 on:
+  push:
+    branches:
+      - gh-action
   schedule:
     - cron: "0 0 * * *" # Every day at 7 minutes after midnight (everyone runs at 00:00, let's be nice to GH)
   watch:
