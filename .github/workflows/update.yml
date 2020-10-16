@@ -34,4 +34,4 @@ jobs:
           branch: autoupdate/multicodec
           delete-branch: true
           title: Autoupdate multicodec submodule
-          body: Detected changes while updating the multicodec submodule.
+          body: "@dennis-tra Detected changes while updating the multicodec submodule."
