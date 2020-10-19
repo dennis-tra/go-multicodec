@@ -6,31 +6,25 @@ Periodically self-generated Go constants of [multicodecs](https://github.com/mul
 
 ## Table of Contents
 
-- [go-multicodec](#go-multicodec)
-  - [Table of Contents](#table-of-contents)
-  - [Motivation](#motivation)
-  - [Workflow](#workflow)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Generator](#generator)
-  - [Related Efforts](#related-efforts)
-  - [Maintainers](#maintainers)
-  - [License](#license)
+- [Motivation](#motivation)
+- [Workflow](#workflow)
+- [Install](#install)
+- [Usage](#usage)
+- [Generator](#generator)
+- [Maintainers](#maintainers)
+- [License](#license)
 
 ## Motivation
-
-Diverging canonical table and implementation.
-Usage of GitHub action
 
 Multiple constant definitions. E.g.
 
 - [multiformats/go-multihash/multihash.go#L38](https://github.com/multiformats/go-multihash/blob/6f1ea18f1da5f7735ea31b5e2011da61c409e37f/multihash.go#L38)
 - [multiformats/go-cid/cid.go#L52](https://github.com/ipfs/go-cid/blob/e530276a7008f5973e7da6640ed305ecc5825d27/cid.go#L52)
-- probably more
+- maybe more?
 
 ## Workflow
 
-This repo contians the [multiformats/multicodec](https://github.com/multiformats/multicodec) repo as a submodule. Every night a few minutes after midnight a GitHub-Action updates the HEAD of the submodule to the most recent `master` commit, runs the constant generator, commits possible changes and creates a pull request. It will update the same pull request if subsequent runs find different changes and it won't create a pull request if no changes were detected (GitHub-Action: [peter-evans/create-pull-request@v3](https://github.com/peter-evans/create-pull-request)).
+This repo contians the [multiformats/multicodec](https://github.com/multiformats/multicodec) repo as a submodule. Every night a few minutes after midnight a GitHub-Action updates the HEAD of the submodule to the most recent `master` commit, runs the constants generator, commits possible changes and creates a pull request. It will update the same pull request if subsequent runs find different changes and it won't create a pull request if no changes were detected (GitHub-Action: [peter-evans/create-pull-request@v3](https://github.com/peter-evans/create-pull-request)).
 
 ## Install
 
@@ -48,7 +42,7 @@ package main
 import "github.com/dennis-tra/go-multicodec"
 
 func main() {
-    multicodec.CIDV2
+    _ = multicodec.CIDV2
 }
 ```
 
@@ -66,9 +60,6 @@ The `--recursive` flag makes sure you're also fetching the submodule. Then run `
 go run ./gen/
 go fmt ./...
 ```
-
-## Related Efforts
-
 
 ## Maintainers
 
