@@ -17,5 +17,5 @@ func (c Codec) IsDeprecated() bool {
 
 // VarName returns the variable name to be used in Go for this codec
 func (c Codec) VarName() string {
-	return toCamel(c.Name)
+	return strings.ReplaceAll(strings.ToUpper(c.Name), "-", "_")
 }

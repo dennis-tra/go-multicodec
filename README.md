@@ -48,7 +48,7 @@ package main
 import "github.com/dennis-tra/go-multicodec"
 
 func main() {
-    multicodec.Cidv2
+    multicodec.CIDV2
 }
 ```
 
