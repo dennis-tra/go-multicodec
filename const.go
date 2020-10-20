@@ -7,921 +7,921 @@ type Codec uint64
 // These are multicodec-packed content types.
 const (
 	// multihash: raw binary
-	IDENTITY Codec = 0x00
+	Identity Codec = 0x00 // identity
 	// ipld: CIDv1
-	CIDV1 Codec = 0x01
+	Cidv1 Codec = 0x01 // cidv1
 	// ipld: CIDv2
-	CIDV2 Codec = 0x02
+	Cidv2 Codec = 0x02 // cidv2
 	// ipld: CIDv3
-	CIDV3 Codec = 0x03
+	Cidv3 Codec = 0x03 // cidv3
 	// multiaddr
-	IP4 Codec = 0x04
+	Ip4 Codec = 0x04 // ip4
 	// multiaddr
-	TCP Codec = 0x06
+	Tcp Codec = 0x06 // tcp
 	// multihash
-	SHA1 Codec = 0x11
+	Sha1 Codec = 0x11 // sha1
 	// multihash
-	SHA2_256 Codec = 0x12
+	Sha2_256 Codec = 0x12 // sha2-256
 	// multihash
-	SHA2_512 Codec = 0x13
+	Sha2_512 Codec = 0x13 // sha2-512
 	// multihash
-	SHA3_512 Codec = 0x14
+	Sha3_512 Codec = 0x14 // sha3-512
 	// multihash
-	SHA3_384 Codec = 0x15
+	Sha3_384 Codec = 0x15 // sha3-384
 	// multihash
-	SHA3_256 Codec = 0x16
+	Sha3_256 Codec = 0x16 // sha3-256
 	// multihash
-	SHA3_224 Codec = 0x17
+	Sha3_224 Codec = 0x17 // sha3-224
 	// multihash
-	SHAKE_128 Codec = 0x18
+	Shake_128 Codec = 0x18 // shake-128
 	// multihash
-	SHAKE_256 Codec = 0x19
+	Shake_256 Codec = 0x19 // shake-256
 	// multihash: keccak has variable output length. The number specifies the core length
-	KECCAK_224 Codec = 0x1a
+	Keccak_224 Codec = 0x1a // keccak-224
 	// multihash
-	KECCAK_256 Codec = 0x1b
+	Keccak_256 Codec = 0x1b // keccak-256
 	// multihash
-	KECCAK_384 Codec = 0x1c
+	Keccak_384 Codec = 0x1c // keccak-384
 	// multihash
-	KECCAK_512 Codec = 0x1d
+	Keccak_512 Codec = 0x1d // keccak-512
 	// multihash: BLAKE3 has a default 32 byte output length. The maximum length is (2^64)-1 bytes.
-	BLAKE3 Codec = 0x1e
+	Blake3 Codec = 0x1e // blake3
 	// multiaddr
-	DCCP Codec = 0x21
+	Dccp Codec = 0x21 // dccp
 	// multihash
-	MURMUR3_128 Codec = 0x22
+	Murmur3_128 Codec = 0x22 // murmur3-128
 	// multihash
-	MURMUR3_32 Codec = 0x23
+	Murmur3_32 Codec = 0x23 // murmur3-32
 	// multiaddr
-	IP6 Codec = 0x29
+	Ip6 Codec = 0x29 // ip6
 	// multiaddr
-	IP6ZONE Codec = 0x2a
+	Ip6Zone Codec = 0x2a // ip6zone
 	// namespace: Namespace for string paths. Corresponds to `/` in ASCII.
-	PATH Codec = 0x2f
+	Path Codec = 0x2f // path
 	// multiformat
-	MULTICODEC Codec = 0x30
+	Multicodec Codec = 0x30 // multicodec
 	// multiformat
-	MULTIHASH Codec = 0x31
+	Multihash Codec = 0x31 // multihash
 	// multiformat
-	MULTIADDR Codec = 0x32
+	Multiaddr Codec = 0x32 // multiaddr
 	// multiformat
-	MULTIBASE Codec = 0x33
+	Multibase Codec = 0x33 // multibase
 	// multiaddr
-	DNS Codec = 0x35
+	Dns Codec = 0x35 // dns
 	// multiaddr
-	DNS4 Codec = 0x36
+	Dns4 Codec = 0x36 // dns4
 	// multiaddr
-	DNS6 Codec = 0x37
+	Dns6 Codec = 0x37 // dns6
 	// multiaddr
-	DNSADDR Codec = 0x38
+	Dnsaddr Codec = 0x38 // dnsaddr
 	// serialization: Protocol Buffers
-	PROTOBUF Codec = 0x50
+	Protobuf Codec = 0x50 // protobuf
 	// serialization: CBOR
-	CBOR Codec = 0x51
+	Cbor Codec = 0x51 // cbor
 	// ipld: raw binary
-	RAW Codec = 0x55
+	Raw Codec = 0x55 // raw
 	// multihash
-	DBL_SHA2_256 Codec = 0x56
+	Dbl_Sha2_256 Codec = 0x56 // dbl-sha2-256
 	// serialization: recursive length prefix
-	RLP Codec = 0x60
+	Rlp Codec = 0x60 // rlp
 	// serialization: bencode
-	BENCODE Codec = 0x63
+	Bencode Codec = 0x63 // bencode
 	// ipld: MerkleDAG protobuf
-	DAG_PB Codec = 0x70
+	Dag_Pb Codec = 0x70 // dag-pb
 	// ipld: MerkleDAG cbor
-	DAG_CBOR Codec = 0x71
+	Dag_Cbor Codec = 0x71 // dag-cbor
 	// ipld: Libp2p Public Key
-	LIBP2P_KEY Codec = 0x72
+	Libp2P_Key Codec = 0x72 // libp2p-key
 	// ipld: Raw Git object
-	GIT_RAW Codec = 0x78
+	Git_Raw Codec = 0x78 // git-raw
 	// ipld: Torrent file info field (bencoded)
-	TORRENT_INFO Codec = 0x7b
+	Torrent_Info Codec = 0x7b // torrent-info
 	// ipld: Torrent file (bencoded)
-	TORRENT_FILE Codec = 0x7c
+	Torrent_File Codec = 0x7c // torrent-file
 	// ipld: Leofcoin Block
-	LEOFCOIN_BLOCK Codec = 0x81
+	Leofcoin_Block Codec = 0x81 // leofcoin-block
 	// ipld: Leofcoin Transaction
-	LEOFCOIN_TX Codec = 0x82
+	Leofcoin_Tx Codec = 0x82 // leofcoin-tx
 	// ipld: Leofcoin Peer Reputation
-	LEOFCOIN_PR Codec = 0x83
+	Leofcoin_Pr Codec = 0x83 // leofcoin-pr
 	// multiaddr
-	SCTP Codec = 0x84
+	Sctp Codec = 0x84 // sctp
 	// ipld: MerkleDAG JOSE
-	DAG_JOSE Codec = 0x85
+	Dag_Jose Codec = 0x85 // dag-jose
 	// ipld: MerkleDAG COSE
-	DAG_COSE Codec = 0x86
+	Dag_Cose Codec = 0x86 // dag-cose
 	// ipld: Ethereum Block (RLP)
-	ETH_BLOCK Codec = 0x90
+	Eth_Block Codec = 0x90 // eth-block
 	// ipld: Ethereum Block List (RLP)
-	ETH_BLOCK_LIST Codec = 0x91
+	Eth_Block_List Codec = 0x91 // eth-block-list
 	// ipld: Ethereum Transaction Trie (Eth-Trie)
-	ETH_TX_TRIE Codec = 0x92
+	Eth_Tx_Trie Codec = 0x92 // eth-tx-trie
 	// ipld: Ethereum Transaction (RLP)
-	ETH_TX Codec = 0x93
+	Eth_Tx Codec = 0x93 // eth-tx
 	// ipld: Ethereum Transaction Receipt Trie (Eth-Trie)
-	ETH_TX_RECEIPT_TRIE Codec = 0x94
+	Eth_Tx_Receipt_Trie Codec = 0x94 // eth-tx-receipt-trie
 	// ipld: Ethereum Transaction Receipt (RLP)
-	ETH_TX_RECEIPT Codec = 0x95
+	Eth_Tx_Receipt Codec = 0x95 // eth-tx-receipt
 	// ipld: Ethereum State Trie (Eth-Secure-Trie)
-	ETH_STATE_TRIE Codec = 0x96
+	Eth_State_Trie Codec = 0x96 // eth-state-trie
 	// ipld: Ethereum Account Snapshot (RLP)
-	ETH_ACCOUNT_SNAPSHOT Codec = 0x97
+	Eth_Account_Snapshot Codec = 0x97 // eth-account-snapshot
 	// ipld: Ethereum Contract Storage Trie (Eth-Secure-Trie)
-	ETH_STORAGE_TRIE Codec = 0x98
+	Eth_Storage_Trie Codec = 0x98 // eth-storage-trie
 	// ipld: Bitcoin Block
-	BITCOIN_BLOCK Codec = 0xb0
+	Bitcoin_Block Codec = 0xb0 // bitcoin-block
 	// ipld: Bitcoin Tx
-	BITCOIN_TX Codec = 0xb1
+	Bitcoin_Tx Codec = 0xb1 // bitcoin-tx
 	// ipld: Bitcoin Witness Commitment
-	BITCOIN_WITNESS_COMMITMENT Codec = 0xb2
+	Bitcoin_Witness_Commitment Codec = 0xb2 // bitcoin-witness-commitment
 	// ipld: Zcash Block
-	ZCASH_BLOCK Codec = 0xc0
+	Zcash_Block Codec = 0xc0 // zcash-block
 	// ipld: Zcash Tx
-	ZCASH_TX Codec = 0xc1
+	Zcash_Tx Codec = 0xc1 // zcash-tx
 	// namespace: Ceramic Document Id
-	DOCID Codec = 0xce
+	Docid Codec = 0xce // docid
 	// ipld: Stellar Block
-	STELLAR_BLOCK Codec = 0xd0
+	Stellar_Block Codec = 0xd0 // stellar-block
 	// ipld: Stellar Tx
-	STELLAR_TX Codec = 0xd1
+	Stellar_Tx Codec = 0xd1 // stellar-tx
 	// multihash
-	MD4 Codec = 0xd4
+	Md4 Codec = 0xd4 // md4
 	// multihash
-	MD5 Codec = 0xd5
+	Md5 Codec = 0xd5 // md5
 	// multihash: Binary Merkle Tree Hash
-	BMT Codec = 0xd6
+	Bmt Codec = 0xd6 // bmt
 	// ipld: Decred Block
-	DECRED_BLOCK Codec = 0xe0
+	Decred_Block Codec = 0xe0 // decred-block
 	// ipld: Decred Tx
-	DECRED_TX Codec = 0xe1
+	Decred_Tx Codec = 0xe1 // decred-tx
 	// namespace: IPLD path
-	IPLD_NS Codec = 0xe2
+	Ipld_Ns Codec = 0xe2 // ipld-ns
 	// namespace: IPFS path
-	IPFS_NS Codec = 0xe3
+	Ipfs_Ns Codec = 0xe3 // ipfs-ns
 	// namespace: Swarm path
-	SWARM_NS Codec = 0xe4
+	Swarm_Ns Codec = 0xe4 // swarm-ns
 	// namespace: IPNS path
-	IPNS_NS Codec = 0xe5
+	Ipns_Ns Codec = 0xe5 // ipns-ns
 	// namespace: ZeroNet site address
-	ZERONET Codec = 0xe6
+	Zeronet Codec = 0xe6 // zeronet
 	// key: Secp256k1 public key
-	SECP256K1_PUB Codec = 0xe7
+	Secp256K1_Pub Codec = 0xe7 // secp256k1-pub
 	// key: BLS12-381 public key in the G1 field
-	BLS12_381_G1_PUB Codec = 0xea
+	Bls12_381_G1_Pub Codec = 0xea // bls12_381-g1-pub
 	// key: BLS12-381 public key in the G2 field
-	BLS12_381_G2_PUB Codec = 0xeb
+	Bls12_381_G2_Pub Codec = 0xeb // bls12_381-g2-pub
 	// key: Curve25519 public key
-	X25519_PUB Codec = 0xec
+	X25519_Pub Codec = 0xec // x25519-pub
 	// key: Ed25519 public key
-	ED25519_PUB Codec = 0xed
+	Ed25519_Pub Codec = 0xed // ed25519-pub
 	// key: BLS12-381 concatenated public keys in both the G1 and G2 fields
-	BLS12_381_G1G2_PUB Codec = 0xee
+	Bls12_381_G1G2_Pub Codec = 0xee // bls12_381-g1g2-pub
 	// ipld: Dash Block
-	DASH_BLOCK Codec = 0xf0
+	Dash_Block Codec = 0xf0 // dash-block
 	// ipld: Dash Tx
-	DASH_TX Codec = 0xf1
+	Dash_Tx Codec = 0xf1 // dash-tx
 	// ipld: Swarm Manifest
-	SWARM_MANIFEST Codec = 0xfa
+	Swarm_Manifest Codec = 0xfa // swarm-manifest
 	// ipld: Swarm Feed
-	SWARM_FEED Codec = 0xfb
+	Swarm_Feed Codec = 0xfb // swarm-feed
 	// multiaddr
-	UDP Codec = 0x0111
+	Udp Codec = 0x0111 // udp
 	// multiaddr
-	P2P_WEBRTC_STAR Codec = 0x0113
+	P2P_Webrtc_Star Codec = 0x0113 // p2p-webrtc-star
 	// multiaddr
-	P2P_WEBRTC_DIRECT Codec = 0x0114
+	P2P_Webrtc_Direct Codec = 0x0114 // p2p-webrtc-direct
 	// multiaddr
-	P2P_STARDUST Codec = 0x0115
+	P2P_Stardust Codec = 0x0115 // p2p-stardust
 	// multiaddr
-	P2P_CIRCUIT Codec = 0x0122
+	P2P_Circuit Codec = 0x0122 // p2p-circuit
 	// ipld: MerkleDAG json
-	DAG_JSON Codec = 0x0129
+	Dag_Json Codec = 0x0129 // dag-json
 	// multiaddr
-	UDT Codec = 0x012d
+	Udt Codec = 0x012d // udt
 	// multiaddr
-	UTP Codec = 0x012e
+	Utp Codec = 0x012e // utp
 	// multiaddr
-	UNIX Codec = 0x0190
+	Unix Codec = 0x0190 // unix
 	// multiaddr: libp2p
-	P2P Codec = 0x01a5
+	P2P Codec = 0x01a5 // p2p
 	// Deprecated: multiaddr: libp2p (deprecated)
-	IPFS Codec = 0x01a5
+	Ipfs Codec = 0x01a5 // ipfs
 	// multiaddr
-	HTTPS Codec = 0x01bb
+	Https Codec = 0x01bb // https
 	// multiaddr
-	ONION Codec = 0x01bc
+	Onion Codec = 0x01bc // onion
 	// multiaddr
-	ONION3 Codec = 0x01bd
+	Onion3 Codec = 0x01bd // onion3
 	// multiaddr: I2P base64 (raw public key)
-	GARLIC64 Codec = 0x01be
+	Garlic64 Codec = 0x01be // garlic64
 	// multiaddr: I2P base32 (hashed public key or encoded public key/checksum+optional secret)
-	GARLIC32 Codec = 0x01bf
+	Garlic32 Codec = 0x01bf // garlic32
 	// multiaddr
-	TLS Codec = 0x01c0
+	Tls Codec = 0x01c0 // tls
 	// multiaddr
-	QUIC Codec = 0x01cc
+	Quic Codec = 0x01cc // quic
 	// multiaddr
-	WS Codec = 0x01dd
+	Ws Codec = 0x01dd // ws
 	// multiaddr
-	WSS Codec = 0x01de
+	Wss Codec = 0x01de // wss
 	// multiaddr
-	P2P_WEBSOCKET_STAR Codec = 0x01df
+	P2P_Websocket_Star Codec = 0x01df // p2p-websocket-star
 	// multiaddr
-	HTTP Codec = 0x01e0
+	Http Codec = 0x01e0 // http
 	// serialization: JSON (UTF-8-encoded)
-	JSON Codec = 0x0200
+	Json Codec = 0x0200 // json
 	// serialization: MessagePack
-	MESSAGEPACK Codec = 0x0201
+	Messagepack Codec = 0x0201 // messagepack
 	// libp2p: libp2p peer record type
-	LIBP2P_PEER_RECORD Codec = 0x0301
+	Libp2P_Peer_Record Codec = 0x0301 // libp2p-peer-record
 	// multihash: SHA2-256 with the two most significant bits from the last byte zeroed (as via a mask with 0b00111111) - used for proving trees as in Filecoin
-	SHA2_256_TRUNC254_PADDED Codec = 0x1012
+	Sha2_256_Trunc254_Padded Codec = 0x1012 // sha2-256-trunc254-padded
 	// multihash
-	RIPEMD_128 Codec = 0x1052
+	Ripemd_128 Codec = 0x1052 // ripemd-128
 	// multihash
-	RIPEMD_160 Codec = 0x1053
+	Ripemd_160 Codec = 0x1053 // ripemd-160
 	// multihash
-	RIPEMD_256 Codec = 0x1054
+	Ripemd_256 Codec = 0x1054 // ripemd-256
 	// multihash
-	RIPEMD_320 Codec = 0x1055
+	Ripemd_320 Codec = 0x1055 // ripemd-320
 	// multihash
-	X11 Codec = 0x1100
+	X11 Codec = 0x1100 // x11
 	// key: P-256 public Key
-	P256_PUB Codec = 0x1200
+	P256_Pub Codec = 0x1200 // p256-pub
 	// key: P-384 public Key
-	P384_PUB Codec = 0x1201
+	P384_Pub Codec = 0x1201 // p384-pub
 	// key: P-521 public Key
-	P521_PUB Codec = 0x1202
+	P521_Pub Codec = 0x1202 // p521-pub
 	// key: Ed448 public Key
-	ED448_PUB Codec = 0x1203
+	Ed448_Pub Codec = 0x1203 // ed448-pub
 	// key: X448 public Key
-	X448_PUB Codec = 0x1204
+	X448_Pub Codec = 0x1204 // x448-pub
 	// key: Ed25519 private key
-	ED25519_PRIV Codec = 0x1300
+	Ed25519_Priv Codec = 0x1300 // ed25519-priv
 	// multihash: KangarooTwelve is an extendable-output hash function based on Keccak-p
-	KANGAROOTWELVE Codec = 0x1d01
+	Kangarootwelve Codec = 0x1d01 // kangarootwelve
 	// multihash
-	SM3_256 Codec = 0x534d
+	Sm3_256 Codec = 0x534d // sm3-256
 	// multihash: Blake2b consists of 64 output lengths that give different hashes
-	BLAKE2B_8 Codec = 0xb201
+	Blake2B_8 Codec = 0xb201 // blake2b-8
 	// multihash
-	BLAKE2B_16 Codec = 0xb202
+	Blake2B_16 Codec = 0xb202 // blake2b-16
 	// multihash
-	BLAKE2B_24 Codec = 0xb203
+	Blake2B_24 Codec = 0xb203 // blake2b-24
 	// multihash
-	BLAKE2B_32 Codec = 0xb204
+	Blake2B_32 Codec = 0xb204 // blake2b-32
 	// multihash
-	BLAKE2B_40 Codec = 0xb205
+	Blake2B_40 Codec = 0xb205 // blake2b-40
 	// multihash
-	BLAKE2B_48 Codec = 0xb206
+	Blake2B_48 Codec = 0xb206 // blake2b-48
 	// multihash
-	BLAKE2B_56 Codec = 0xb207
+	Blake2B_56 Codec = 0xb207 // blake2b-56
 	// multihash
-	BLAKE2B_64 Codec = 0xb208
+	Blake2B_64 Codec = 0xb208 // blake2b-64
 	// multihash
-	BLAKE2B_72 Codec = 0xb209
+	Blake2B_72 Codec = 0xb209 // blake2b-72
 	// multihash
-	BLAKE2B_80 Codec = 0xb20a
+	Blake2B_80 Codec = 0xb20a // blake2b-80
 	// multihash
-	BLAKE2B_88 Codec = 0xb20b
+	Blake2B_88 Codec = 0xb20b // blake2b-88
 	// multihash
-	BLAKE2B_96 Codec = 0xb20c
+	Blake2B_96 Codec = 0xb20c // blake2b-96
 	// multihash
-	BLAKE2B_104 Codec = 0xb20d
+	Blake2B_104 Codec = 0xb20d // blake2b-104
 	// multihash
-	BLAKE2B_112 Codec = 0xb20e
+	Blake2B_112 Codec = 0xb20e // blake2b-112
 	// multihash
-	BLAKE2B_120 Codec = 0xb20f
+	Blake2B_120 Codec = 0xb20f // blake2b-120
 	// multihash
-	BLAKE2B_128 Codec = 0xb210
+	Blake2B_128 Codec = 0xb210 // blake2b-128
 	// multihash
-	BLAKE2B_136 Codec = 0xb211
+	Blake2B_136 Codec = 0xb211 // blake2b-136
 	// multihash
-	BLAKE2B_144 Codec = 0xb212
+	Blake2B_144 Codec = 0xb212 // blake2b-144
 	// multihash
-	BLAKE2B_152 Codec = 0xb213
+	Blake2B_152 Codec = 0xb213 // blake2b-152
 	// multihash
-	BLAKE2B_160 Codec = 0xb214
+	Blake2B_160 Codec = 0xb214 // blake2b-160
 	// multihash
-	BLAKE2B_168 Codec = 0xb215
+	Blake2B_168 Codec = 0xb215 // blake2b-168
 	// multihash
-	BLAKE2B_176 Codec = 0xb216
+	Blake2B_176 Codec = 0xb216 // blake2b-176
 	// multihash
-	BLAKE2B_184 Codec = 0xb217
+	Blake2B_184 Codec = 0xb217 // blake2b-184
 	// multihash
-	BLAKE2B_192 Codec = 0xb218
+	Blake2B_192 Codec = 0xb218 // blake2b-192
 	// multihash
-	BLAKE2B_200 Codec = 0xb219
+	Blake2B_200 Codec = 0xb219 // blake2b-200
 	// multihash
-	BLAKE2B_208 Codec = 0xb21a
+	Blake2B_208 Codec = 0xb21a // blake2b-208
 	// multihash
-	BLAKE2B_216 Codec = 0xb21b
+	Blake2B_216 Codec = 0xb21b // blake2b-216
 	// multihash
-	BLAKE2B_224 Codec = 0xb21c
+	Blake2B_224 Codec = 0xb21c // blake2b-224
 	// multihash
-	BLAKE2B_232 Codec = 0xb21d
+	Blake2B_232 Codec = 0xb21d // blake2b-232
 	// multihash
-	BLAKE2B_240 Codec = 0xb21e
+	Blake2B_240 Codec = 0xb21e // blake2b-240
 	// multihash
-	BLAKE2B_248 Codec = 0xb21f
+	Blake2B_248 Codec = 0xb21f // blake2b-248
 	// multihash
-	BLAKE2B_256 Codec = 0xb220
+	Blake2B_256 Codec = 0xb220 // blake2b-256
 	// multihash
-	BLAKE2B_264 Codec = 0xb221
+	Blake2B_264 Codec = 0xb221 // blake2b-264
 	// multihash
-	BLAKE2B_272 Codec = 0xb222
+	Blake2B_272 Codec = 0xb222 // blake2b-272
 	// multihash
-	BLAKE2B_280 Codec = 0xb223
+	Blake2B_280 Codec = 0xb223 // blake2b-280
 	// multihash
-	BLAKE2B_288 Codec = 0xb224
+	Blake2B_288 Codec = 0xb224 // blake2b-288
 	// multihash
-	BLAKE2B_296 Codec = 0xb225
+	Blake2B_296 Codec = 0xb225 // blake2b-296
 	// multihash
-	BLAKE2B_304 Codec = 0xb226
+	Blake2B_304 Codec = 0xb226 // blake2b-304
 	// multihash
-	BLAKE2B_312 Codec = 0xb227
+	Blake2B_312 Codec = 0xb227 // blake2b-312
 	// multihash
-	BLAKE2B_320 Codec = 0xb228
+	Blake2B_320 Codec = 0xb228 // blake2b-320
 	// multihash
-	BLAKE2B_328 Codec = 0xb229
+	Blake2B_328 Codec = 0xb229 // blake2b-328
 	// multihash
-	BLAKE2B_336 Codec = 0xb22a
+	Blake2B_336 Codec = 0xb22a // blake2b-336
 	// multihash
-	BLAKE2B_344 Codec = 0xb22b
+	Blake2B_344 Codec = 0xb22b // blake2b-344
 	// multihash
-	BLAKE2B_352 Codec = 0xb22c
+	Blake2B_352 Codec = 0xb22c // blake2b-352
 	// multihash
-	BLAKE2B_360 Codec = 0xb22d
+	Blake2B_360 Codec = 0xb22d // blake2b-360
 	// multihash
-	BLAKE2B_368 Codec = 0xb22e
+	Blake2B_368 Codec = 0xb22e // blake2b-368
 	// multihash
-	BLAKE2B_376 Codec = 0xb22f
+	Blake2B_376 Codec = 0xb22f // blake2b-376
 	// multihash
-	BLAKE2B_384 Codec = 0xb230
+	Blake2B_384 Codec = 0xb230 // blake2b-384
 	// multihash
-	BLAKE2B_392 Codec = 0xb231
+	Blake2B_392 Codec = 0xb231 // blake2b-392
 	// multihash
-	BLAKE2B_400 Codec = 0xb232
+	Blake2B_400 Codec = 0xb232 // blake2b-400
 	// multihash
-	BLAKE2B_408 Codec = 0xb233
+	Blake2B_408 Codec = 0xb233 // blake2b-408
 	// multihash
-	BLAKE2B_416 Codec = 0xb234
+	Blake2B_416 Codec = 0xb234 // blake2b-416
 	// multihash
-	BLAKE2B_424 Codec = 0xb235
+	Blake2B_424 Codec = 0xb235 // blake2b-424
 	// multihash
-	BLAKE2B_432 Codec = 0xb236
+	Blake2B_432 Codec = 0xb236 // blake2b-432
 	// multihash
-	BLAKE2B_440 Codec = 0xb237
+	Blake2B_440 Codec = 0xb237 // blake2b-440
 	// multihash
-	BLAKE2B_448 Codec = 0xb238
+	Blake2B_448 Codec = 0xb238 // blake2b-448
 	// multihash
-	BLAKE2B_456 Codec = 0xb239
+	Blake2B_456 Codec = 0xb239 // blake2b-456
 	// multihash
-	BLAKE2B_464 Codec = 0xb23a
+	Blake2B_464 Codec = 0xb23a // blake2b-464
 	// multihash
-	BLAKE2B_472 Codec = 0xb23b
+	Blake2B_472 Codec = 0xb23b // blake2b-472
 	// multihash
-	BLAKE2B_480 Codec = 0xb23c
+	Blake2B_480 Codec = 0xb23c // blake2b-480
 	// multihash
-	BLAKE2B_488 Codec = 0xb23d
+	Blake2B_488 Codec = 0xb23d // blake2b-488
 	// multihash
-	BLAKE2B_496 Codec = 0xb23e
+	Blake2B_496 Codec = 0xb23e // blake2b-496
 	// multihash
-	BLAKE2B_504 Codec = 0xb23f
+	Blake2B_504 Codec = 0xb23f // blake2b-504
 	// multihash
-	BLAKE2B_512 Codec = 0xb240
+	Blake2B_512 Codec = 0xb240 // blake2b-512
 	// multihash: Blake2s consists of 32 output lengths that give different hashes
-	BLAKE2S_8 Codec = 0xb241
+	Blake2S_8 Codec = 0xb241 // blake2s-8
 	// multihash
-	BLAKE2S_16 Codec = 0xb242
+	Blake2S_16 Codec = 0xb242 // blake2s-16
 	// multihash
-	BLAKE2S_24 Codec = 0xb243
+	Blake2S_24 Codec = 0xb243 // blake2s-24
 	// multihash
-	BLAKE2S_32 Codec = 0xb244
+	Blake2S_32 Codec = 0xb244 // blake2s-32
 	// multihash
-	BLAKE2S_40 Codec = 0xb245
+	Blake2S_40 Codec = 0xb245 // blake2s-40
 	// multihash
-	BLAKE2S_48 Codec = 0xb246
+	Blake2S_48 Codec = 0xb246 // blake2s-48
 	// multihash
-	BLAKE2S_56 Codec = 0xb247
+	Blake2S_56 Codec = 0xb247 // blake2s-56
 	// multihash
-	BLAKE2S_64 Codec = 0xb248
+	Blake2S_64 Codec = 0xb248 // blake2s-64
 	// multihash
-	BLAKE2S_72 Codec = 0xb249
+	Blake2S_72 Codec = 0xb249 // blake2s-72
 	// multihash
-	BLAKE2S_80 Codec = 0xb24a
+	Blake2S_80 Codec = 0xb24a // blake2s-80
 	// multihash
-	BLAKE2S_88 Codec = 0xb24b
+	Blake2S_88 Codec = 0xb24b // blake2s-88
 	// multihash
-	BLAKE2S_96 Codec = 0xb24c
+	Blake2S_96 Codec = 0xb24c // blake2s-96
 	// multihash
-	BLAKE2S_104 Codec = 0xb24d
+	Blake2S_104 Codec = 0xb24d // blake2s-104
 	// multihash
-	BLAKE2S_112 Codec = 0xb24e
+	Blake2S_112 Codec = 0xb24e // blake2s-112
 	// multihash
-	BLAKE2S_120 Codec = 0xb24f
+	Blake2S_120 Codec = 0xb24f // blake2s-120
 	// multihash
-	BLAKE2S_128 Codec = 0xb250
+	Blake2S_128 Codec = 0xb250 // blake2s-128
 	// multihash
-	BLAKE2S_136 Codec = 0xb251
+	Blake2S_136 Codec = 0xb251 // blake2s-136
 	// multihash
-	BLAKE2S_144 Codec = 0xb252
+	Blake2S_144 Codec = 0xb252 // blake2s-144
 	// multihash
-	BLAKE2S_152 Codec = 0xb253
+	Blake2S_152 Codec = 0xb253 // blake2s-152
 	// multihash
-	BLAKE2S_160 Codec = 0xb254
+	Blake2S_160 Codec = 0xb254 // blake2s-160
 	// multihash
-	BLAKE2S_168 Codec = 0xb255
+	Blake2S_168 Codec = 0xb255 // blake2s-168
 	// multihash
-	BLAKE2S_176 Codec = 0xb256
+	Blake2S_176 Codec = 0xb256 // blake2s-176
 	// multihash
-	BLAKE2S_184 Codec = 0xb257
+	Blake2S_184 Codec = 0xb257 // blake2s-184
 	// multihash
-	BLAKE2S_192 Codec = 0xb258
+	Blake2S_192 Codec = 0xb258 // blake2s-192
 	// multihash
-	BLAKE2S_200 Codec = 0xb259
+	Blake2S_200 Codec = 0xb259 // blake2s-200
 	// multihash
-	BLAKE2S_208 Codec = 0xb25a
+	Blake2S_208 Codec = 0xb25a // blake2s-208
 	// multihash
-	BLAKE2S_216 Codec = 0xb25b
+	Blake2S_216 Codec = 0xb25b // blake2s-216
 	// multihash
-	BLAKE2S_224 Codec = 0xb25c
+	Blake2S_224 Codec = 0xb25c // blake2s-224
 	// multihash
-	BLAKE2S_232 Codec = 0xb25d
+	Blake2S_232 Codec = 0xb25d // blake2s-232
 	// multihash
-	BLAKE2S_240 Codec = 0xb25e
+	Blake2S_240 Codec = 0xb25e // blake2s-240
 	// multihash
-	BLAKE2S_248 Codec = 0xb25f
+	Blake2S_248 Codec = 0xb25f // blake2s-248
 	// multihash
-	BLAKE2S_256 Codec = 0xb260
+	Blake2S_256 Codec = 0xb260 // blake2s-256
 	// multihash: Skein256 consists of 32 output lengths that give different hashes
-	SKEIN256_8 Codec = 0xb301
+	Skein256_8 Codec = 0xb301 // skein256-8
 	// multihash
-	SKEIN256_16 Codec = 0xb302
+	Skein256_16 Codec = 0xb302 // skein256-16
 	// multihash
-	SKEIN256_24 Codec = 0xb303
+	Skein256_24 Codec = 0xb303 // skein256-24
 	// multihash
-	SKEIN256_32 Codec = 0xb304
+	Skein256_32 Codec = 0xb304 // skein256-32
 	// multihash
-	SKEIN256_40 Codec = 0xb305
+	Skein256_40 Codec = 0xb305 // skein256-40
 	// multihash
-	SKEIN256_48 Codec = 0xb306
+	Skein256_48 Codec = 0xb306 // skein256-48
 	// multihash
-	SKEIN256_56 Codec = 0xb307
+	Skein256_56 Codec = 0xb307 // skein256-56
 	// multihash
-	SKEIN256_64 Codec = 0xb308
+	Skein256_64 Codec = 0xb308 // skein256-64
 	// multihash
-	SKEIN256_72 Codec = 0xb309
+	Skein256_72 Codec = 0xb309 // skein256-72
 	// multihash
-	SKEIN256_80 Codec = 0xb30a
+	Skein256_80 Codec = 0xb30a // skein256-80
 	// multihash
-	SKEIN256_88 Codec = 0xb30b
+	Skein256_88 Codec = 0xb30b // skein256-88
 	// multihash
-	SKEIN256_96 Codec = 0xb30c
+	Skein256_96 Codec = 0xb30c // skein256-96
 	// multihash
-	SKEIN256_104 Codec = 0xb30d
+	Skein256_104 Codec = 0xb30d // skein256-104
 	// multihash
-	SKEIN256_112 Codec = 0xb30e
+	Skein256_112 Codec = 0xb30e // skein256-112
 	// multihash
-	SKEIN256_120 Codec = 0xb30f
+	Skein256_120 Codec = 0xb30f // skein256-120
 	// multihash
-	SKEIN256_128 Codec = 0xb310
+	Skein256_128 Codec = 0xb310 // skein256-128
 	// multihash
-	SKEIN256_136 Codec = 0xb311
+	Skein256_136 Codec = 0xb311 // skein256-136
 	// multihash
-	SKEIN256_144 Codec = 0xb312
+	Skein256_144 Codec = 0xb312 // skein256-144
 	// multihash
-	SKEIN256_152 Codec = 0xb313
+	Skein256_152 Codec = 0xb313 // skein256-152
 	// multihash
-	SKEIN256_160 Codec = 0xb314
+	Skein256_160 Codec = 0xb314 // skein256-160
 	// multihash
-	SKEIN256_168 Codec = 0xb315
+	Skein256_168 Codec = 0xb315 // skein256-168
 	// multihash
-	SKEIN256_176 Codec = 0xb316
+	Skein256_176 Codec = 0xb316 // skein256-176
 	// multihash
-	SKEIN256_184 Codec = 0xb317
+	Skein256_184 Codec = 0xb317 // skein256-184
 	// multihash
-	SKEIN256_192 Codec = 0xb318
+	Skein256_192 Codec = 0xb318 // skein256-192
 	// multihash
-	SKEIN256_200 Codec = 0xb319
+	Skein256_200 Codec = 0xb319 // skein256-200
 	// multihash
-	SKEIN256_208 Codec = 0xb31a
+	Skein256_208 Codec = 0xb31a // skein256-208
 	// multihash
-	SKEIN256_216 Codec = 0xb31b
+	Skein256_216 Codec = 0xb31b // skein256-216
 	// multihash
-	SKEIN256_224 Codec = 0xb31c
+	Skein256_224 Codec = 0xb31c // skein256-224
 	// multihash
-	SKEIN256_232 Codec = 0xb31d
+	Skein256_232 Codec = 0xb31d // skein256-232
 	// multihash
-	SKEIN256_240 Codec = 0xb31e
+	Skein256_240 Codec = 0xb31e // skein256-240
 	// multihash
-	SKEIN256_248 Codec = 0xb31f
+	Skein256_248 Codec = 0xb31f // skein256-248
 	// multihash
-	SKEIN256_256 Codec = 0xb320
+	Skein256_256 Codec = 0xb320 // skein256-256
 	// multihash: Skein512 consists of 64 output lengths that give different hashes
-	SKEIN512_8 Codec = 0xb321
+	Skein512_8 Codec = 0xb321 // skein512-8
 	// multihash
-	SKEIN512_16 Codec = 0xb322
+	Skein512_16 Codec = 0xb322 // skein512-16
 	// multihash
-	SKEIN512_24 Codec = 0xb323
+	Skein512_24 Codec = 0xb323 // skein512-24
 	// multihash
-	SKEIN512_32 Codec = 0xb324
+	Skein512_32 Codec = 0xb324 // skein512-32
 	// multihash
-	SKEIN512_40 Codec = 0xb325
+	Skein512_40 Codec = 0xb325 // skein512-40
 	// multihash
-	SKEIN512_48 Codec = 0xb326
+	Skein512_48 Codec = 0xb326 // skein512-48
 	// multihash
-	SKEIN512_56 Codec = 0xb327
+	Skein512_56 Codec = 0xb327 // skein512-56
 	// multihash
-	SKEIN512_64 Codec = 0xb328
+	Skein512_64 Codec = 0xb328 // skein512-64
 	// multihash
-	SKEIN512_72 Codec = 0xb329
+	Skein512_72 Codec = 0xb329 // skein512-72
 	// multihash
-	SKEIN512_80 Codec = 0xb32a
+	Skein512_80 Codec = 0xb32a // skein512-80
 	// multihash
-	SKEIN512_88 Codec = 0xb32b
+	Skein512_88 Codec = 0xb32b // skein512-88
 	// multihash
-	SKEIN512_96 Codec = 0xb32c
+	Skein512_96 Codec = 0xb32c // skein512-96
 	// multihash
-	SKEIN512_104 Codec = 0xb32d
+	Skein512_104 Codec = 0xb32d // skein512-104
 	// multihash
-	SKEIN512_112 Codec = 0xb32e
+	Skein512_112 Codec = 0xb32e // skein512-112
 	// multihash
-	SKEIN512_120 Codec = 0xb32f
+	Skein512_120 Codec = 0xb32f // skein512-120
 	// multihash
-	SKEIN512_128 Codec = 0xb330
+	Skein512_128 Codec = 0xb330 // skein512-128
 	// multihash
-	SKEIN512_136 Codec = 0xb331
+	Skein512_136 Codec = 0xb331 // skein512-136
 	// multihash
-	SKEIN512_144 Codec = 0xb332
+	Skein512_144 Codec = 0xb332 // skein512-144
 	// multihash
-	SKEIN512_152 Codec = 0xb333
+	Skein512_152 Codec = 0xb333 // skein512-152
 	// multihash
-	SKEIN512_160 Codec = 0xb334
+	Skein512_160 Codec = 0xb334 // skein512-160
 	// multihash
-	SKEIN512_168 Codec = 0xb335
+	Skein512_168 Codec = 0xb335 // skein512-168
 	// multihash
-	SKEIN512_176 Codec = 0xb336
+	Skein512_176 Codec = 0xb336 // skein512-176
 	// multihash
-	SKEIN512_184 Codec = 0xb337
+	Skein512_184 Codec = 0xb337 // skein512-184
 	// multihash
-	SKEIN512_192 Codec = 0xb338
+	Skein512_192 Codec = 0xb338 // skein512-192
 	// multihash
-	SKEIN512_200 Codec = 0xb339
+	Skein512_200 Codec = 0xb339 // skein512-200
 	// multihash
-	SKEIN512_208 Codec = 0xb33a
+	Skein512_208 Codec = 0xb33a // skein512-208
 	// multihash
-	SKEIN512_216 Codec = 0xb33b
+	Skein512_216 Codec = 0xb33b // skein512-216
 	// multihash
-	SKEIN512_224 Codec = 0xb33c
+	Skein512_224 Codec = 0xb33c // skein512-224
 	// multihash
-	SKEIN512_232 Codec = 0xb33d
+	Skein512_232 Codec = 0xb33d // skein512-232
 	// multihash
-	SKEIN512_240 Codec = 0xb33e
+	Skein512_240 Codec = 0xb33e // skein512-240
 	// multihash
-	SKEIN512_248 Codec = 0xb33f
+	Skein512_248 Codec = 0xb33f // skein512-248
 	// multihash
-	SKEIN512_256 Codec = 0xb340
+	Skein512_256 Codec = 0xb340 // skein512-256
 	// multihash
-	SKEIN512_264 Codec = 0xb341
+	Skein512_264 Codec = 0xb341 // skein512-264
 	// multihash
-	SKEIN512_272 Codec = 0xb342
+	Skein512_272 Codec = 0xb342 // skein512-272
 	// multihash
-	SKEIN512_280 Codec = 0xb343
+	Skein512_280 Codec = 0xb343 // skein512-280
 	// multihash
-	SKEIN512_288 Codec = 0xb344
+	Skein512_288 Codec = 0xb344 // skein512-288
 	// multihash
-	SKEIN512_296 Codec = 0xb345
+	Skein512_296 Codec = 0xb345 // skein512-296
 	// multihash
-	SKEIN512_304 Codec = 0xb346
+	Skein512_304 Codec = 0xb346 // skein512-304
 	// multihash
-	SKEIN512_312 Codec = 0xb347
+	Skein512_312 Codec = 0xb347 // skein512-312
 	// multihash
-	SKEIN512_320 Codec = 0xb348
+	Skein512_320 Codec = 0xb348 // skein512-320
 	// multihash
-	SKEIN512_328 Codec = 0xb349
+	Skein512_328 Codec = 0xb349 // skein512-328
 	// multihash
-	SKEIN512_336 Codec = 0xb34a
+	Skein512_336 Codec = 0xb34a // skein512-336
 	// multihash
-	SKEIN512_344 Codec = 0xb34b
+	Skein512_344 Codec = 0xb34b // skein512-344
 	// multihash
-	SKEIN512_352 Codec = 0xb34c
+	Skein512_352 Codec = 0xb34c // skein512-352
 	// multihash
-	SKEIN512_360 Codec = 0xb34d
+	Skein512_360 Codec = 0xb34d // skein512-360
 	// multihash
-	SKEIN512_368 Codec = 0xb34e
+	Skein512_368 Codec = 0xb34e // skein512-368
 	// multihash
-	SKEIN512_376 Codec = 0xb34f
+	Skein512_376 Codec = 0xb34f // skein512-376
 	// multihash
-	SKEIN512_384 Codec = 0xb350
+	Skein512_384 Codec = 0xb350 // skein512-384
 	// multihash
-	SKEIN512_392 Codec = 0xb351
+	Skein512_392 Codec = 0xb351 // skein512-392
 	// multihash
-	SKEIN512_400 Codec = 0xb352
+	Skein512_400 Codec = 0xb352 // skein512-400
 	// multihash
-	SKEIN512_408 Codec = 0xb353
+	Skein512_408 Codec = 0xb353 // skein512-408
 	// multihash
-	SKEIN512_416 Codec = 0xb354
+	Skein512_416 Codec = 0xb354 // skein512-416
 	// multihash
-	SKEIN512_424 Codec = 0xb355
+	Skein512_424 Codec = 0xb355 // skein512-424
 	// multihash
-	SKEIN512_432 Codec = 0xb356
+	Skein512_432 Codec = 0xb356 // skein512-432
 	// multihash
-	SKEIN512_440 Codec = 0xb357
+	Skein512_440 Codec = 0xb357 // skein512-440
 	// multihash
-	SKEIN512_448 Codec = 0xb358
+	Skein512_448 Codec = 0xb358 // skein512-448
 	// multihash
-	SKEIN512_456 Codec = 0xb359
+	Skein512_456 Codec = 0xb359 // skein512-456
 	// multihash
-	SKEIN512_464 Codec = 0xb35a
+	Skein512_464 Codec = 0xb35a // skein512-464
 	// multihash
-	SKEIN512_472 Codec = 0xb35b
+	Skein512_472 Codec = 0xb35b // skein512-472
 	// multihash
-	SKEIN512_480 Codec = 0xb35c
+	Skein512_480 Codec = 0xb35c // skein512-480
 	// multihash
-	SKEIN512_488 Codec = 0xb35d
+	Skein512_488 Codec = 0xb35d // skein512-488
 	// multihash
-	SKEIN512_496 Codec = 0xb35e
+	Skein512_496 Codec = 0xb35e // skein512-496
 	// multihash
-	SKEIN512_504 Codec = 0xb35f
+	Skein512_504 Codec = 0xb35f // skein512-504
 	// multihash
-	SKEIN512_512 Codec = 0xb360
+	Skein512_512 Codec = 0xb360 // skein512-512
 	// multihash: Skein1024 consists of 128 output lengths that give different hashes
-	SKEIN1024_8 Codec = 0xb361
+	Skein1024_8 Codec = 0xb361 // skein1024-8
 	// multihash
-	SKEIN1024_16 Codec = 0xb362
+	Skein1024_16 Codec = 0xb362 // skein1024-16
 	// multihash
-	SKEIN1024_24 Codec = 0xb363
+	Skein1024_24 Codec = 0xb363 // skein1024-24
 	// multihash
-	SKEIN1024_32 Codec = 0xb364
+	Skein1024_32 Codec = 0xb364 // skein1024-32
 	// multihash
-	SKEIN1024_40 Codec = 0xb365
+	Skein1024_40 Codec = 0xb365 // skein1024-40
 	// multihash
-	SKEIN1024_48 Codec = 0xb366
+	Skein1024_48 Codec = 0xb366 // skein1024-48
 	// multihash
-	SKEIN1024_56 Codec = 0xb367
+	Skein1024_56 Codec = 0xb367 // skein1024-56
 	// multihash
-	SKEIN1024_64 Codec = 0xb368
+	Skein1024_64 Codec = 0xb368 // skein1024-64
 	// multihash
-	SKEIN1024_72 Codec = 0xb369
+	Skein1024_72 Codec = 0xb369 // skein1024-72
 	// multihash
-	SKEIN1024_80 Codec = 0xb36a
+	Skein1024_80 Codec = 0xb36a // skein1024-80
 	// multihash
-	SKEIN1024_88 Codec = 0xb36b
+	Skein1024_88 Codec = 0xb36b // skein1024-88
 	// multihash
-	SKEIN1024_96 Codec = 0xb36c
+	Skein1024_96 Codec = 0xb36c // skein1024-96
 	// multihash
-	SKEIN1024_104 Codec = 0xb36d
+	Skein1024_104 Codec = 0xb36d // skein1024-104
 	// multihash
-	SKEIN1024_112 Codec = 0xb36e
+	Skein1024_112 Codec = 0xb36e // skein1024-112
 	// multihash
-	SKEIN1024_120 Codec = 0xb36f
+	Skein1024_120 Codec = 0xb36f // skein1024-120
 	// multihash
-	SKEIN1024_128 Codec = 0xb370
+	Skein1024_128 Codec = 0xb370 // skein1024-128
 	// multihash
-	SKEIN1024_136 Codec = 0xb371
+	Skein1024_136 Codec = 0xb371 // skein1024-136
 	// multihash
-	SKEIN1024_144 Codec = 0xb372
+	Skein1024_144 Codec = 0xb372 // skein1024-144
 	// multihash
-	SKEIN1024_152 Codec = 0xb373
+	Skein1024_152 Codec = 0xb373 // skein1024-152
 	// multihash
-	SKEIN1024_160 Codec = 0xb374
+	Skein1024_160 Codec = 0xb374 // skein1024-160
 	// multihash
-	SKEIN1024_168 Codec = 0xb375
+	Skein1024_168 Codec = 0xb375 // skein1024-168
 	// multihash
-	SKEIN1024_176 Codec = 0xb376
+	Skein1024_176 Codec = 0xb376 // skein1024-176
 	// multihash
-	SKEIN1024_184 Codec = 0xb377
+	Skein1024_184 Codec = 0xb377 // skein1024-184
 	// multihash
-	SKEIN1024_192 Codec = 0xb378
+	Skein1024_192 Codec = 0xb378 // skein1024-192
 	// multihash
-	SKEIN1024_200 Codec = 0xb379
+	Skein1024_200 Codec = 0xb379 // skein1024-200
 	// multihash
-	SKEIN1024_208 Codec = 0xb37a
+	Skein1024_208 Codec = 0xb37a // skein1024-208
 	// multihash
-	SKEIN1024_216 Codec = 0xb37b
+	Skein1024_216 Codec = 0xb37b // skein1024-216
 	// multihash
-	SKEIN1024_224 Codec = 0xb37c
+	Skein1024_224 Codec = 0xb37c // skein1024-224
 	// multihash
-	SKEIN1024_232 Codec = 0xb37d
+	Skein1024_232 Codec = 0xb37d // skein1024-232
 	// multihash
-	SKEIN1024_240 Codec = 0xb37e
+	Skein1024_240 Codec = 0xb37e // skein1024-240
 	// multihash
-	SKEIN1024_248 Codec = 0xb37f
+	Skein1024_248 Codec = 0xb37f // skein1024-248
 	// multihash
-	SKEIN1024_256 Codec = 0xb380
+	Skein1024_256 Codec = 0xb380 // skein1024-256
 	// multihash
-	SKEIN1024_264 Codec = 0xb381
+	Skein1024_264 Codec = 0xb381 // skein1024-264
 	// multihash
-	SKEIN1024_272 Codec = 0xb382
+	Skein1024_272 Codec = 0xb382 // skein1024-272
 	// multihash
-	SKEIN1024_280 Codec = 0xb383
+	Skein1024_280 Codec = 0xb383 // skein1024-280
 	// multihash
-	SKEIN1024_288 Codec = 0xb384
+	Skein1024_288 Codec = 0xb384 // skein1024-288
 	// multihash
-	SKEIN1024_296 Codec = 0xb385
+	Skein1024_296 Codec = 0xb385 // skein1024-296
 	// multihash
-	SKEIN1024_304 Codec = 0xb386
+	Skein1024_304 Codec = 0xb386 // skein1024-304
 	// multihash
-	SKEIN1024_312 Codec = 0xb387
+	Skein1024_312 Codec = 0xb387 // skein1024-312
 	// multihash
-	SKEIN1024_320 Codec = 0xb388
+	Skein1024_320 Codec = 0xb388 // skein1024-320
 	// multihash
-	SKEIN1024_328 Codec = 0xb389
+	Skein1024_328 Codec = 0xb389 // skein1024-328
 	// multihash
-	SKEIN1024_336 Codec = 0xb38a
+	Skein1024_336 Codec = 0xb38a // skein1024-336
 	// multihash
-	SKEIN1024_344 Codec = 0xb38b
+	Skein1024_344 Codec = 0xb38b // skein1024-344
 	// multihash
-	SKEIN1024_352 Codec = 0xb38c
+	Skein1024_352 Codec = 0xb38c // skein1024-352
 	// multihash
-	SKEIN1024_360 Codec = 0xb38d
+	Skein1024_360 Codec = 0xb38d // skein1024-360
 	// multihash
-	SKEIN1024_368 Codec = 0xb38e
+	Skein1024_368 Codec = 0xb38e // skein1024-368
 	// multihash
-	SKEIN1024_376 Codec = 0xb38f
+	Skein1024_376 Codec = 0xb38f // skein1024-376
 	// multihash
-	SKEIN1024_384 Codec = 0xb390
+	Skein1024_384 Codec = 0xb390 // skein1024-384
 	// multihash
-	SKEIN1024_392 Codec = 0xb391
+	Skein1024_392 Codec = 0xb391 // skein1024-392
 	// multihash
-	SKEIN1024_400 Codec = 0xb392
+	Skein1024_400 Codec = 0xb392 // skein1024-400
 	// multihash
-	SKEIN1024_408 Codec = 0xb393
+	Skein1024_408 Codec = 0xb393 // skein1024-408
 	// multihash
-	SKEIN1024_416 Codec = 0xb394
+	Skein1024_416 Codec = 0xb394 // skein1024-416
 	// multihash
-	SKEIN1024_424 Codec = 0xb395
+	Skein1024_424 Codec = 0xb395 // skein1024-424
 	// multihash
-	SKEIN1024_432 Codec = 0xb396
+	Skein1024_432 Codec = 0xb396 // skein1024-432
 	// multihash
-	SKEIN1024_440 Codec = 0xb397
+	Skein1024_440 Codec = 0xb397 // skein1024-440
 	// multihash
-	SKEIN1024_448 Codec = 0xb398
+	Skein1024_448 Codec = 0xb398 // skein1024-448
 	// multihash
-	SKEIN1024_456 Codec = 0xb399
+	Skein1024_456 Codec = 0xb399 // skein1024-456
 	// multihash
-	SKEIN1024_464 Codec = 0xb39a
+	Skein1024_464 Codec = 0xb39a // skein1024-464
 	// multihash
-	SKEIN1024_472 Codec = 0xb39b
+	Skein1024_472 Codec = 0xb39b // skein1024-472
 	// multihash
-	SKEIN1024_480 Codec = 0xb39c
+	Skein1024_480 Codec = 0xb39c // skein1024-480
 	// multihash
-	SKEIN1024_488 Codec = 0xb39d
+	Skein1024_488 Codec = 0xb39d // skein1024-488
 	// multihash
-	SKEIN1024_496 Codec = 0xb39e
+	Skein1024_496 Codec = 0xb39e // skein1024-496
 	// multihash
-	SKEIN1024_504 Codec = 0xb39f
+	Skein1024_504 Codec = 0xb39f // skein1024-504
 	// multihash
-	SKEIN1024_512 Codec = 0xb3a0
+	Skein1024_512 Codec = 0xb3a0 // skein1024-512
 	// multihash
-	SKEIN1024_520 Codec = 0xb3a1
+	Skein1024_520 Codec = 0xb3a1 // skein1024-520
 	// multihash
-	SKEIN1024_528 Codec = 0xb3a2
+	Skein1024_528 Codec = 0xb3a2 // skein1024-528
 	// multihash
-	SKEIN1024_536 Codec = 0xb3a3
+	Skein1024_536 Codec = 0xb3a3 // skein1024-536
 	// multihash
-	SKEIN1024_544 Codec = 0xb3a4
+	Skein1024_544 Codec = 0xb3a4 // skein1024-544
 	// multihash
-	SKEIN1024_552 Codec = 0xb3a5
+	Skein1024_552 Codec = 0xb3a5 // skein1024-552
 	// multihash
-	SKEIN1024_560 Codec = 0xb3a6
+	Skein1024_560 Codec = 0xb3a6 // skein1024-560
 	// multihash
-	SKEIN1024_568 Codec = 0xb3a7
+	Skein1024_568 Codec = 0xb3a7 // skein1024-568
 	// multihash
-	SKEIN1024_576 Codec = 0xb3a8
+	Skein1024_576 Codec = 0xb3a8 // skein1024-576
 	// multihash
-	SKEIN1024_584 Codec = 0xb3a9
+	Skein1024_584 Codec = 0xb3a9 // skein1024-584
 	// multihash
-	SKEIN1024_592 Codec = 0xb3aa
+	Skein1024_592 Codec = 0xb3aa // skein1024-592
 	// multihash
-	SKEIN1024_600 Codec = 0xb3ab
+	Skein1024_600 Codec = 0xb3ab // skein1024-600
 	// multihash
-	SKEIN1024_608 Codec = 0xb3ac
+	Skein1024_608 Codec = 0xb3ac // skein1024-608
 	// multihash
-	SKEIN1024_616 Codec = 0xb3ad
+	Skein1024_616 Codec = 0xb3ad // skein1024-616
 	// multihash
-	SKEIN1024_624 Codec = 0xb3ae
+	Skein1024_624 Codec = 0xb3ae // skein1024-624
 	// multihash
-	SKEIN1024_632 Codec = 0xb3af
+	Skein1024_632 Codec = 0xb3af // skein1024-632
 	// multihash
-	SKEIN1024_640 Codec = 0xb3b0
+	Skein1024_640 Codec = 0xb3b0 // skein1024-640
 	// multihash
-	SKEIN1024_648 Codec = 0xb3b1
+	Skein1024_648 Codec = 0xb3b1 // skein1024-648
 	// multihash
-	SKEIN1024_656 Codec = 0xb3b2
+	Skein1024_656 Codec = 0xb3b2 // skein1024-656
 	// multihash
-	SKEIN1024_664 Codec = 0xb3b3
+	Skein1024_664 Codec = 0xb3b3 // skein1024-664
 	// multihash
-	SKEIN1024_672 Codec = 0xb3b4
+	Skein1024_672 Codec = 0xb3b4 // skein1024-672
 	// multihash
-	SKEIN1024_680 Codec = 0xb3b5
+	Skein1024_680 Codec = 0xb3b5 // skein1024-680
 	// multihash
-	SKEIN1024_688 Codec = 0xb3b6
+	Skein1024_688 Codec = 0xb3b6 // skein1024-688
 	// multihash
-	SKEIN1024_696 Codec = 0xb3b7
+	Skein1024_696 Codec = 0xb3b7 // skein1024-696
 	// multihash
-	SKEIN1024_704 Codec = 0xb3b8
+	Skein1024_704 Codec = 0xb3b8 // skein1024-704
 	// multihash
-	SKEIN1024_712 Codec = 0xb3b9
+	Skein1024_712 Codec = 0xb3b9 // skein1024-712
 	// multihash
-	SKEIN1024_720 Codec = 0xb3ba
+	Skein1024_720 Codec = 0xb3ba // skein1024-720
 	// multihash
-	SKEIN1024_728 Codec = 0xb3bb
+	Skein1024_728 Codec = 0xb3bb // skein1024-728
 	// multihash
-	SKEIN1024_736 Codec = 0xb3bc
+	Skein1024_736 Codec = 0xb3bc // skein1024-736
 	// multihash
-	SKEIN1024_744 Codec = 0xb3bd
+	Skein1024_744 Codec = 0xb3bd // skein1024-744
 	// multihash
-	SKEIN1024_752 Codec = 0xb3be
+	Skein1024_752 Codec = 0xb3be // skein1024-752
 	// multihash
-	SKEIN1024_760 Codec = 0xb3bf
+	Skein1024_760 Codec = 0xb3bf // skein1024-760
 	// multihash
-	SKEIN1024_768 Codec = 0xb3c0
+	Skein1024_768 Codec = 0xb3c0 // skein1024-768
 	// multihash
-	SKEIN1024_776 Codec = 0xb3c1
+	Skein1024_776 Codec = 0xb3c1 // skein1024-776
 	// multihash
-	SKEIN1024_784 Codec = 0xb3c2
+	Skein1024_784 Codec = 0xb3c2 // skein1024-784
 	// multihash
-	SKEIN1024_792 Codec = 0xb3c3
+	Skein1024_792 Codec = 0xb3c3 // skein1024-792
 	// multihash
-	SKEIN1024_800 Codec = 0xb3c4
+	Skein1024_800 Codec = 0xb3c4 // skein1024-800
 	// multihash
-	SKEIN1024_808 Codec = 0xb3c5
+	Skein1024_808 Codec = 0xb3c5 // skein1024-808
 	// multihash
-	SKEIN1024_816 Codec = 0xb3c6
+	Skein1024_816 Codec = 0xb3c6 // skein1024-816
 	// multihash
-	SKEIN1024_824 Codec = 0xb3c7
+	Skein1024_824 Codec = 0xb3c7 // skein1024-824
 	// multihash
-	SKEIN1024_832 Codec = 0xb3c8
+	Skein1024_832 Codec = 0xb3c8 // skein1024-832
 	// multihash
-	SKEIN1024_840 Codec = 0xb3c9
+	Skein1024_840 Codec = 0xb3c9 // skein1024-840
 	// multihash
-	SKEIN1024_848 Codec = 0xb3ca
+	Skein1024_848 Codec = 0xb3ca // skein1024-848
 	// multihash
-	SKEIN1024_856 Codec = 0xb3cb
+	Skein1024_856 Codec = 0xb3cb // skein1024-856
 	// multihash
-	SKEIN1024_864 Codec = 0xb3cc
+	Skein1024_864 Codec = 0xb3cc // skein1024-864
 	// multihash
-	SKEIN1024_872 Codec = 0xb3cd
+	Skein1024_872 Codec = 0xb3cd // skein1024-872
 	// multihash
-	SKEIN1024_880 Codec = 0xb3ce
+	Skein1024_880 Codec = 0xb3ce // skein1024-880
 	// multihash
-	SKEIN1024_888 Codec = 0xb3cf
+	Skein1024_888 Codec = 0xb3cf // skein1024-888
 	// multihash
-	SKEIN1024_896 Codec = 0xb3d0
+	Skein1024_896 Codec = 0xb3d0 // skein1024-896
 	// multihash
-	SKEIN1024_904 Codec = 0xb3d1
+	Skein1024_904 Codec = 0xb3d1 // skein1024-904
 	// multihash
-	SKEIN1024_912 Codec = 0xb3d2
+	Skein1024_912 Codec = 0xb3d2 // skein1024-912
 	// multihash
-	SKEIN1024_920 Codec = 0xb3d3
+	Skein1024_920 Codec = 0xb3d3 // skein1024-920
 	// multihash
-	SKEIN1024_928 Codec = 0xb3d4
+	Skein1024_928 Codec = 0xb3d4 // skein1024-928
 	// multihash
-	SKEIN1024_936 Codec = 0xb3d5
+	Skein1024_936 Codec = 0xb3d5 // skein1024-936
 	// multihash
-	SKEIN1024_944 Codec = 0xb3d6
+	Skein1024_944 Codec = 0xb3d6 // skein1024-944
 	// multihash
-	SKEIN1024_952 Codec = 0xb3d7
+	Skein1024_952 Codec = 0xb3d7 // skein1024-952
 	// multihash
-	SKEIN1024_960 Codec = 0xb3d8
+	Skein1024_960 Codec = 0xb3d8 // skein1024-960
 	// multihash
-	SKEIN1024_968 Codec = 0xb3d9
+	Skein1024_968 Codec = 0xb3d9 // skein1024-968
 	// multihash
-	SKEIN1024_976 Codec = 0xb3da
+	Skein1024_976 Codec = 0xb3da // skein1024-976
 	// multihash
-	SKEIN1024_984 Codec = 0xb3db
+	Skein1024_984 Codec = 0xb3db // skein1024-984
 	// multihash
-	SKEIN1024_992 Codec = 0xb3dc
+	Skein1024_992 Codec = 0xb3dc // skein1024-992
 	// multihash
-	SKEIN1024_1000 Codec = 0xb3dd
+	Skein1024_1000 Codec = 0xb3dd // skein1024-1000
 	// multihash
-	SKEIN1024_1008 Codec = 0xb3de
+	Skein1024_1008 Codec = 0xb3de // skein1024-1008
 	// multihash
-	SKEIN1024_1016 Codec = 0xb3df
+	Skein1024_1016 Codec = 0xb3df // skein1024-1016
 	// multihash
-	SKEIN1024_1024 Codec = 0xb3e0
+	Skein1024_1024 Codec = 0xb3e0 // skein1024-1024
 	// multihash: Poseidon using BLS12-381 and arity of 2 with Filecoin parameters
-	POSEIDON_BLS12_381_A2_FC1 Codec = 0xb401
+	Poseidon_Bls12_381_A2_Fc1 Codec = 0xb401 // poseidon-bls12_381-a2-fc1
 	// multihash: Poseidon using BLS12-381 and arity of 2 with Filecoin parameters - high-security variant
-	POSEIDON_BLS12_381_A2_FC1_SC Codec = 0xb402
+	Poseidon_Bls12_381_A2_Fc1_Sc Codec = 0xb402 // poseidon-bls12_381-a2-fc1-sc
 	// zeroxcert: 0xcert Asset Imprint (root hash)
-	ZEROXCERT_IMPRINT_256 Codec = 0xce11
+	Zeroxcert_Imprint_256 Codec = 0xce11 // zeroxcert-imprint-256
 	// filecoin: Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
-	FIL_COMMITMENT_UNSEALED Codec = 0xf101
+	Fil_Commitment_Unsealed Codec = 0xf101 // fil-commitment-unsealed
 	// filecoin: Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
-	FIL_COMMITMENT_SEALED Codec = 0xf102
+	Fil_Commitment_Sealed Codec = 0xf102 // fil-commitment-sealed
 	// holochain: Holochain v0 address    + 8 R-S (63 x Base-32)
-	HOLOCHAIN_ADR_V0 Codec = 0x807124
+	Holochain_Adr_V0 Codec = 0x807124 // holochain-adr-v0
 	// holochain: Holochain v1 address    + 8 R-S (63 x Base-32)
-	HOLOCHAIN_ADR_V1 Codec = 0x817124
+	Holochain_Adr_V1 Codec = 0x817124 // holochain-adr-v1
 	// holochain: Holochain v0 public key + 8 R-S (63 x Base-32)
-	HOLOCHAIN_KEY_V0 Codec = 0x947124
+	Holochain_Key_V0 Codec = 0x947124 // holochain-key-v0
 	// holochain: Holochain v1 public key + 8 R-S (63 x Base-32)
-	HOLOCHAIN_KEY_V1 Codec = 0x957124
+	Holochain_Key_V1 Codec = 0x957124 // holochain-key-v1
 	// holochain: Holochain v0 signature  + 8 R-S (63 x Base-32)
-	HOLOCHAIN_SIG_V0 Codec = 0xa27124
+	Holochain_Sig_V0 Codec = 0xa27124 // holochain-sig-v0
 	// holochain: Holochain v1 signature  + 8 R-S (63 x Base-32)
-	HOLOCHAIN_SIG_V1 Codec = 0xa37124
+	Holochain_Sig_V1 Codec = 0xa37124 // holochain-sig-v1
 )
