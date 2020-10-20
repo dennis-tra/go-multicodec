@@ -1,29 +1,17 @@
 package main
 
-//go:generate go run ./gen/gen.go
-//go:generate gofmt -w codecs.go
-
 import (
 	"encoding/csv"
 	"log"
 	"os"
 	"path"
-	"sort"
 	"strings"
 	"text/template"
 )
 
-var templates = []string{
-	"codecs",
-	"const",
-	"tag",
-}
-
 // TemplateData is the data structure that is passed into the go template
 type TemplateData struct {
-	Codecs      []Codec
-	CodecsByTag map[string][]Codec
-	Tags        []string
+	Codecs []Codec
 }
 
 func main() {
@@ -34,15 +22,12 @@ func main() {
 	}
 	defer table.Close()
 
-	reader := csv.NewReader(table)
-	records, err := reader.ReadAll()
+	records, err := csv.NewReader(table).ReadAll()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tags := []string{}
-	codecsByTag := map[string][]Codec{}
-	codecs := []Codec{}
+	codecs := make([]Codec, len(records)-1)
 	for i, record := range records {
 
 		// Skip header line
@@ -56,33 +41,20 @@ func main() {
 			Code:        strings.TrimSpace(record[2]),
 			Description: strings.TrimSpace(record[3]),
 		}
-		codecs = append(codecs, c)
-
-		if _, exists := codecsByTag[c.Tag]; !exists {
-			tags = append(tags, c.Tag)
-			codecsByTag[c.Tag] = []Codec{}
-		}
-		codecsByTag[c.Tag] = append(codecsByTag[c.Tag], c)
+		codecs[i-1] = c
 	}
-
-	sort.Strings(tags)
 
 	tData := TemplateData{
-		Codecs:      codecs,
-		CodecsByTag: codecsByTag,
-		Tags:        tags,
+		Codecs: codecs,
 	}
 
-	funcMap := template.FuncMap{
-		"ToTitle": strings.Title,
-	}
-
+	templates := []string{"codecs", "const"}
 	for _, templateName := range templates {
 
 		tplFileName := templateName + ".go.tpl"
 		t, err := template.
 			New(tplFileName).
-			Funcs(funcMap).
+			Funcs(template.FuncMap{"ToTitle": strings.Title}).
 			ParseFiles(path.Join("templates", tplFileName))
 		if err != nil {
 			log.Fatal(err)
@@ -92,11 +64,12 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		defer out.Close()
 
 		err = t.Execute(out, tData)
 		if err != nil {
+			out.Close()
 			log.Fatal(err)
 		}
+		out.Close()
 	}
 }
