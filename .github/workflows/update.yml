@@ -1,12 +1,29 @@
-name: "Multicodecs submodule update"
+name: "Multicodecs update"
 on:
   schedule:
     - cron: "7 0 * * *" # Every day at 7 minutes after midnight (everyone runs at 00:00, let's be nice to GH)
+  push:
+
+env:
+  go-version: 1.15.0
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      - name: Checking out repository
+        uses: actions/checkout@v2
+
+      # Necessary to properly set up the $PATH variable.
+      # Otherwise stringer can't be found after its installation.
+      - name: Installing Go ${{ env.go-version }}
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ env.go-version }}
+
+      - name: Installing stringer
+        run: cd /tmp && go get -u golang.org/x/tools/cmd/stringer
+
       - name: Generating files
         run: go generate
 

@@ -1,6 +1,6 @@
 # go-multicodec
 
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme) [![Go Report Card](https://goreportcard.com/badge/dennis-tra/go-multicodec)](https://goreportcard.com/report/dennis-tra/go-multicodec)
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme) [![Go Report Card](https://goreportcard.com/badge/dennis-tra/go-multicodec)](https://goreportcard.com/report/dennis-tra/go-multicodec) ![Multicodecs update](https://github.com/dennis-tra/go-multicodec/workflows/Multicodecs%20update/badge.svg)
 
 Periodically self-generated Go constants of [multicodecs](https://github.com/multiformats/multicodec) used by many of the [multiformats](https://github.com/multiformats/multiformats) projects.
 
