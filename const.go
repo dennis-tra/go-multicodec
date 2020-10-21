@@ -157,6 +157,10 @@ const (
 	// namespace: IPLD path
 	Ipld_Ns Codec = 0xe2 // ipld-ns
 	// namespace: IPFS path
+	Ipfs_Ns Codec = 0xe3 // ipfs-ns
+	// namespace: Swarm path
+	Swarm_Ns Codec = 0xe4 // swarm-ns
+	// namespace: IPNS path
 	Ipns_Ns Codec = 0xe5 // ipns-ns
 	// namespace: ZeroNet site address
 	Zeronet Codec = 0xe6 // zeronet
