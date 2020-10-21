@@ -55,7 +55,7 @@ const (
 	// multiaddr
 	Ip6 Codec = 0x29 // ip6
 	// multiaddr
-	Ip6Zone Codec = 0x2a // ip6zone
+	Ip6zone Codec = 0x2a // ip6zone
 	// namespace: Namespace for string paths. Corresponds to `/` in ASCII.
 	Path Codec = 0x2f // path
 	// multiformat
@@ -91,7 +91,7 @@ const (
 	// ipld: MerkleDAG cbor
 	Dag_Cbor Codec = 0x71 // dag-cbor
 	// ipld: Libp2p Public Key
-	Libp2P_Key Codec = 0x72 // libp2p-key
+	Libp2p_Key Codec = 0x72 // libp2p-key
 	// ipld: Raw Git object
 	Git_Raw Codec = 0x78 // git-raw
 	// ipld: Torrent file info field (bencoded)
@@ -165,7 +165,7 @@ const (
 	// namespace: ZeroNet site address
 	Zeronet Codec = 0xe6 // zeronet
 	// key: Secp256k1 public key
-	Secp256K1_Pub Codec = 0xe7 // secp256k1-pub
+	Secp256k1_Pub Codec = 0xe7 // secp256k1-pub
 	// key: BLS12-381 public key in the G1 field
 	Bls12_381_G1_Pub Codec = 0xea // bls12_381-g1-pub
 	// key: BLS12-381 public key in the G2 field
@@ -175,7 +175,7 @@ const (
 	// key: Ed25519 public key
 	Ed25519_Pub Codec = 0xed // ed25519-pub
 	// key: BLS12-381 concatenated public keys in both the G1 and G2 fields
-	Bls12_381_G1G2_Pub Codec = 0xee // bls12_381-g1g2-pub
+	Bls12_381_G1g2_Pub Codec = 0xee // bls12_381-g1g2-pub
 	// ipld: Dash Block
 	Dash_Block Codec = 0xf0 // dash-block
 	// ipld: Dash Tx
@@ -187,13 +187,13 @@ const (
 	// multiaddr
 	Udp Codec = 0x0111 // udp
 	// multiaddr
-	P2P_Webrtc_Star Codec = 0x0113 // p2p-webrtc-star
+	P2p_Webrtc_Star Codec = 0x0113 // p2p-webrtc-star
 	// multiaddr
-	P2P_Webrtc_Direct Codec = 0x0114 // p2p-webrtc-direct
+	P2p_Webrtc_Direct Codec = 0x0114 // p2p-webrtc-direct
 	// multiaddr
-	P2P_Stardust Codec = 0x0115 // p2p-stardust
+	P2p_Stardust Codec = 0x0115 // p2p-stardust
 	// multiaddr
-	P2P_Circuit Codec = 0x0122 // p2p-circuit
+	P2p_Circuit Codec = 0x0122 // p2p-circuit
 	// ipld: MerkleDAG json
 	Dag_Json Codec = 0x0129 // dag-json
 	// multiaddr
@@ -203,7 +203,7 @@ const (
 	// multiaddr
 	Unix Codec = 0x0190 // unix
 	// multiaddr: libp2p
-	P2P Codec = 0x01a5 // p2p
+	P2p Codec = 0x01a5 // p2p
 	// Deprecated: multiaddr: libp2p (deprecated)
 	Ipfs Codec = 0x01a5 // ipfs
 	// multiaddr
@@ -225,7 +225,7 @@ const (
 	// multiaddr
 	Wss Codec = 0x01de // wss
 	// multiaddr
-	P2P_Websocket_Star Codec = 0x01df // p2p-websocket-star
+	P2p_Websocket_Star Codec = 0x01df // p2p-websocket-star
 	// multiaddr
 	Http Codec = 0x01e0 // http
 	// serialization: JSON (UTF-8-encoded)
@@ -233,7 +233,7 @@ const (
 	// serialization: MessagePack
 	Messagepack Codec = 0x0201 // messagepack
 	// libp2p: libp2p peer record type
-	Libp2P_Peer_Record Codec = 0x0301 // libp2p-peer-record
+	Libp2p_Peer_Record Codec = 0x0301 // libp2p-peer-record
 	// multihash: SHA2-256 with the two most significant bits from the last byte zeroed (as via a mask with 0b00111111) - used for proving trees as in Filecoin
 	Sha2_256_Trunc254_Padded Codec = 0x1012 // sha2-256-trunc254-padded
 	// multihash
@@ -263,197 +263,197 @@ const (
 	// multihash
 	Sm3_256 Codec = 0x534d // sm3-256
 	// multihash: Blake2b consists of 64 output lengths that give different hashes
-	Blake2B_8 Codec = 0xb201 // blake2b-8
+	Blake2b_8 Codec = 0xb201 // blake2b-8
 	// multihash
-	Blake2B_16 Codec = 0xb202 // blake2b-16
+	Blake2b_16 Codec = 0xb202 // blake2b-16
 	// multihash
-	Blake2B_24 Codec = 0xb203 // blake2b-24
+	Blake2b_24 Codec = 0xb203 // blake2b-24
 	// multihash
-	Blake2B_32 Codec = 0xb204 // blake2b-32
+	Blake2b_32 Codec = 0xb204 // blake2b-32
 	// multihash
-	Blake2B_40 Codec = 0xb205 // blake2b-40
+	Blake2b_40 Codec = 0xb205 // blake2b-40
 	// multihash
-	Blake2B_48 Codec = 0xb206 // blake2b-48
+	Blake2b_48 Codec = 0xb206 // blake2b-48
 	// multihash
-	Blake2B_56 Codec = 0xb207 // blake2b-56
+	Blake2b_56 Codec = 0xb207 // blake2b-56
 	// multihash
-	Blake2B_64 Codec = 0xb208 // blake2b-64
+	Blake2b_64 Codec = 0xb208 // blake2b-64
 	// multihash
-	Blake2B_72 Codec = 0xb209 // blake2b-72
+	Blake2b_72 Codec = 0xb209 // blake2b-72
 	// multihash
-	Blake2B_80 Codec = 0xb20a // blake2b-80
+	Blake2b_80 Codec = 0xb20a // blake2b-80
 	// multihash
-	Blake2B_88 Codec = 0xb20b // blake2b-88
+	Blake2b_88 Codec = 0xb20b // blake2b-88
 	// multihash
-	Blake2B_96 Codec = 0xb20c // blake2b-96
+	Blake2b_96 Codec = 0xb20c // blake2b-96
 	// multihash
-	Blake2B_104 Codec = 0xb20d // blake2b-104
+	Blake2b_104 Codec = 0xb20d // blake2b-104
 	// multihash
-	Blake2B_112 Codec = 0xb20e // blake2b-112
+	Blake2b_112 Codec = 0xb20e // blake2b-112
 	// multihash
-	Blake2B_120 Codec = 0xb20f // blake2b-120
+	Blake2b_120 Codec = 0xb20f // blake2b-120
 	// multihash
-	Blake2B_128 Codec = 0xb210 // blake2b-128
+	Blake2b_128 Codec = 0xb210 // blake2b-128
 	// multihash
-	Blake2B_136 Codec = 0xb211 // blake2b-136
+	Blake2b_136 Codec = 0xb211 // blake2b-136
 	// multihash
-	Blake2B_144 Codec = 0xb212 // blake2b-144
+	Blake2b_144 Codec = 0xb212 // blake2b-144
 	// multihash
-	Blake2B_152 Codec = 0xb213 // blake2b-152
+	Blake2b_152 Codec = 0xb213 // blake2b-152
 	// multihash
-	Blake2B_160 Codec = 0xb214 // blake2b-160
+	Blake2b_160 Codec = 0xb214 // blake2b-160
 	// multihash
-	Blake2B_168 Codec = 0xb215 // blake2b-168
+	Blake2b_168 Codec = 0xb215 // blake2b-168
 	// multihash
-	Blake2B_176 Codec = 0xb216 // blake2b-176
+	Blake2b_176 Codec = 0xb216 // blake2b-176
 	// multihash
-	Blake2B_184 Codec = 0xb217 // blake2b-184
+	Blake2b_184 Codec = 0xb217 // blake2b-184
 	// multihash
-	Blake2B_192 Codec = 0xb218 // blake2b-192
+	Blake2b_192 Codec = 0xb218 // blake2b-192
 	// multihash
-	Blake2B_200 Codec = 0xb219 // blake2b-200
+	Blake2b_200 Codec = 0xb219 // blake2b-200
 	// multihash
-	Blake2B_208 Codec = 0xb21a // blake2b-208
+	Blake2b_208 Codec = 0xb21a // blake2b-208
 	// multihash
-	Blake2B_216 Codec = 0xb21b // blake2b-216
+	Blake2b_216 Codec = 0xb21b // blake2b-216
 	// multihash
-	Blake2B_224 Codec = 0xb21c // blake2b-224
+	Blake2b_224 Codec = 0xb21c // blake2b-224
 	// multihash
-	Blake2B_232 Codec = 0xb21d // blake2b-232
+	Blake2b_232 Codec = 0xb21d // blake2b-232
 	// multihash
-	Blake2B_240 Codec = 0xb21e // blake2b-240
+	Blake2b_240 Codec = 0xb21e // blake2b-240
 	// multihash
-	Blake2B_248 Codec = 0xb21f // blake2b-248
+	Blake2b_248 Codec = 0xb21f // blake2b-248
 	// multihash
-	Blake2B_256 Codec = 0xb220 // blake2b-256
+	Blake2b_256 Codec = 0xb220 // blake2b-256
 	// multihash
-	Blake2B_264 Codec = 0xb221 // blake2b-264
+	Blake2b_264 Codec = 0xb221 // blake2b-264
 	// multihash
-	Blake2B_272 Codec = 0xb222 // blake2b-272
+	Blake2b_272 Codec = 0xb222 // blake2b-272
 	// multihash
-	Blake2B_280 Codec = 0xb223 // blake2b-280
+	Blake2b_280 Codec = 0xb223 // blake2b-280
 	// multihash
-	Blake2B_288 Codec = 0xb224 // blake2b-288
+	Blake2b_288 Codec = 0xb224 // blake2b-288
 	// multihash
-	Blake2B_296 Codec = 0xb225 // blake2b-296
+	Blake2b_296 Codec = 0xb225 // blake2b-296
 	// multihash
-	Blake2B_304 Codec = 0xb226 // blake2b-304
+	Blake2b_304 Codec = 0xb226 // blake2b-304
 	// multihash
-	Blake2B_312 Codec = 0xb227 // blake2b-312
+	Blake2b_312 Codec = 0xb227 // blake2b-312
 	// multihash
-	Blake2B_320 Codec = 0xb228 // blake2b-320
+	Blake2b_320 Codec = 0xb228 // blake2b-320
 	// multihash
-	Blake2B_328 Codec = 0xb229 // blake2b-328
+	Blake2b_328 Codec = 0xb229 // blake2b-328
 	// multihash
-	Blake2B_336 Codec = 0xb22a // blake2b-336
+	Blake2b_336 Codec = 0xb22a // blake2b-336
 	// multihash
-	Blake2B_344 Codec = 0xb22b // blake2b-344
+	Blake2b_344 Codec = 0xb22b // blake2b-344
 	// multihash
-	Blake2B_352 Codec = 0xb22c // blake2b-352
+	Blake2b_352 Codec = 0xb22c // blake2b-352
 	// multihash
-	Blake2B_360 Codec = 0xb22d // blake2b-360
+	Blake2b_360 Codec = 0xb22d // blake2b-360
 	// multihash
-	Blake2B_368 Codec = 0xb22e // blake2b-368
+	Blake2b_368 Codec = 0xb22e // blake2b-368
 	// multihash
-	Blake2B_376 Codec = 0xb22f // blake2b-376
+	Blake2b_376 Codec = 0xb22f // blake2b-376
 	// multihash
-	Blake2B_384 Codec = 0xb230 // blake2b-384
+	Blake2b_384 Codec = 0xb230 // blake2b-384
 	// multihash
-	Blake2B_392 Codec = 0xb231 // blake2b-392
+	Blake2b_392 Codec = 0xb231 // blake2b-392
 	// multihash
-	Blake2B_400 Codec = 0xb232 // blake2b-400
+	Blake2b_400 Codec = 0xb232 // blake2b-400
 	// multihash
-	Blake2B_408 Codec = 0xb233 // blake2b-408
+	Blake2b_408 Codec = 0xb233 // blake2b-408
 	// multihash
-	Blake2B_416 Codec = 0xb234 // blake2b-416
+	Blake2b_416 Codec = 0xb234 // blake2b-416
 	// multihash
-	Blake2B_424 Codec = 0xb235 // blake2b-424
+	Blake2b_424 Codec = 0xb235 // blake2b-424
 	// multihash
-	Blake2B_432 Codec = 0xb236 // blake2b-432
+	Blake2b_432 Codec = 0xb236 // blake2b-432
 	// multihash
-	Blake2B_440 Codec = 0xb237 // blake2b-440
+	Blake2b_440 Codec = 0xb237 // blake2b-440
 	// multihash
-	Blake2B_448 Codec = 0xb238 // blake2b-448
+	Blake2b_448 Codec = 0xb238 // blake2b-448
 	// multihash
-	Blake2B_456 Codec = 0xb239 // blake2b-456
+	Blake2b_456 Codec = 0xb239 // blake2b-456
 	// multihash
-	Blake2B_464 Codec = 0xb23a // blake2b-464
+	Blake2b_464 Codec = 0xb23a // blake2b-464
 	// multihash
-	Blake2B_472 Codec = 0xb23b // blake2b-472
+	Blake2b_472 Codec = 0xb23b // blake2b-472
 	// multihash
-	Blake2B_480 Codec = 0xb23c // blake2b-480
+	Blake2b_480 Codec = 0xb23c // blake2b-480
 	// multihash
-	Blake2B_488 Codec = 0xb23d // blake2b-488
+	Blake2b_488 Codec = 0xb23d // blake2b-488
 	// multihash
-	Blake2B_496 Codec = 0xb23e // blake2b-496
+	Blake2b_496 Codec = 0xb23e // blake2b-496
 	// multihash
-	Blake2B_504 Codec = 0xb23f // blake2b-504
+	Blake2b_504 Codec = 0xb23f // blake2b-504
 	// multihash
-	Blake2B_512 Codec = 0xb240 // blake2b-512
+	Blake2b_512 Codec = 0xb240 // blake2b-512
 	// multihash: Blake2s consists of 32 output lengths that give different hashes
-	Blake2S_8 Codec = 0xb241 // blake2s-8
+	Blake2s_8 Codec = 0xb241 // blake2s-8
 	// multihash
-	Blake2S_16 Codec = 0xb242 // blake2s-16
+	Blake2s_16 Codec = 0xb242 // blake2s-16
 	// multihash
-	Blake2S_24 Codec = 0xb243 // blake2s-24
+	Blake2s_24 Codec = 0xb243 // blake2s-24
 	// multihash
-	Blake2S_32 Codec = 0xb244 // blake2s-32
+	Blake2s_32 Codec = 0xb244 // blake2s-32
 	// multihash
-	Blake2S_40 Codec = 0xb245 // blake2s-40
+	Blake2s_40 Codec = 0xb245 // blake2s-40
 	// multihash
-	Blake2S_48 Codec = 0xb246 // blake2s-48
+	Blake2s_48 Codec = 0xb246 // blake2s-48
 	// multihash
-	Blake2S_56 Codec = 0xb247 // blake2s-56
+	Blake2s_56 Codec = 0xb247 // blake2s-56
 	// multihash
-	Blake2S_64 Codec = 0xb248 // blake2s-64
+	Blake2s_64 Codec = 0xb248 // blake2s-64
 	// multihash
-	Blake2S_72 Codec = 0xb249 // blake2s-72
+	Blake2s_72 Codec = 0xb249 // blake2s-72
 	// multihash
-	Blake2S_80 Codec = 0xb24a // blake2s-80
+	Blake2s_80 Codec = 0xb24a // blake2s-80
 	// multihash
-	Blake2S_88 Codec = 0xb24b // blake2s-88
+	Blake2s_88 Codec = 0xb24b // blake2s-88
 	// multihash
-	Blake2S_96 Codec = 0xb24c // blake2s-96
+	Blake2s_96 Codec = 0xb24c // blake2s-96
 	// multihash
-	Blake2S_104 Codec = 0xb24d // blake2s-104
+	Blake2s_104 Codec = 0xb24d // blake2s-104
 	// multihash
-	Blake2S_112 Codec = 0xb24e // blake2s-112
+	Blake2s_112 Codec = 0xb24e // blake2s-112
 	// multihash
-	Blake2S_120 Codec = 0xb24f // blake2s-120
+	Blake2s_120 Codec = 0xb24f // blake2s-120
 	// multihash
-	Blake2S_128 Codec = 0xb250 // blake2s-128
+	Blake2s_128 Codec = 0xb250 // blake2s-128
 	// multihash
-	Blake2S_136 Codec = 0xb251 // blake2s-136
+	Blake2s_136 Codec = 0xb251 // blake2s-136
 	// multihash
-	Blake2S_144 Codec = 0xb252 // blake2s-144
+	Blake2s_144 Codec = 0xb252 // blake2s-144
 	// multihash
-	Blake2S_152 Codec = 0xb253 // blake2s-152
+	Blake2s_152 Codec = 0xb253 // blake2s-152
 	// multihash
-	Blake2S_160 Codec = 0xb254 // blake2s-160
+	Blake2s_160 Codec = 0xb254 // blake2s-160
 	// multihash
-	Blake2S_168 Codec = 0xb255 // blake2s-168
+	Blake2s_168 Codec = 0xb255 // blake2s-168
 	// multihash
-	Blake2S_176 Codec = 0xb256 // blake2s-176
+	Blake2s_176 Codec = 0xb256 // blake2s-176
 	// multihash
-	Blake2S_184 Codec = 0xb257 // blake2s-184
+	Blake2s_184 Codec = 0xb257 // blake2s-184
 	// multihash
-	Blake2S_192 Codec = 0xb258 // blake2s-192
+	Blake2s_192 Codec = 0xb258 // blake2s-192
 	// multihash
-	Blake2S_200 Codec = 0xb259 // blake2s-200
+	Blake2s_200 Codec = 0xb259 // blake2s-200
 	// multihash
-	Blake2S_208 Codec = 0xb25a // blake2s-208
+	Blake2s_208 Codec = 0xb25a // blake2s-208
 	// multihash
-	Blake2S_216 Codec = 0xb25b // blake2s-216
+	Blake2s_216 Codec = 0xb25b // blake2s-216
 	// multihash
-	Blake2S_224 Codec = 0xb25c // blake2s-224
+	Blake2s_224 Codec = 0xb25c // blake2s-224
 	// multihash
-	Blake2S_232 Codec = 0xb25d // blake2s-232
+	Blake2s_232 Codec = 0xb25d // blake2s-232
 	// multihash
-	Blake2S_240 Codec = 0xb25e // blake2s-240
+	Blake2s_240 Codec = 0xb25e // blake2s-240
 	// multihash
-	Blake2S_248 Codec = 0xb25f // blake2s-248
+	Blake2s_248 Codec = 0xb25f // blake2s-248
 	// multihash
-	Blake2S_256 Codec = 0xb260 // blake2s-256
+	Blake2s_256 Codec = 0xb260 // blake2s-256
 	// multihash: Skein256 consists of 32 output lengths that give different hashes
 	Skein256_8 Codec = 0xb301 // skein256-8
 	// multihash

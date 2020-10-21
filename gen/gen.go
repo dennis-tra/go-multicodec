@@ -54,7 +54,7 @@ func (c Codec) VarName() string {
 			capNext = false
 		} else if vIsNum {
 			n.WriteByte(v)
-			capNext = true
+			capNext = false
 		} else {
 			capNext = v == '_' || v == ' ' || v == '-' || v == '.'
 			if capNext {
