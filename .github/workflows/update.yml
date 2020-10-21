@@ -7,28 +7,14 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checking out repository
-        uses: actions/checkout@v2
-        with:
-          submodules: recursive
-
-      - name: Updating multicodec submodule
-        run: git fetch && git checkout origin/master
-        working-directory: multicodec
-
-      - name: Getting hash of latest multicodec
-        id: multicodec-head
-        run: echo "::set-output name=hash::$(git rev-parse --short HEAD)"
-        working-directory: multicodec
-
       - name: Generating files
         run: go generate
 
       - name: Creating Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Update multicodec submodule to revision ${{ steps.multicodec-head.outputs.hash }}
+          title: Autoupdate multicodec constants
+          body: "Detected changes in the multicodec table @dennis-tra."
+          commit-message: Update multicodec constants
           branch: autoupdate/multicodec
           delete-branch: true
-          title: Autoupdate multicodec submodule
-          body: "@dennis-tra Detected changes while updating the multicodec submodule."

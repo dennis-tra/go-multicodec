@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/csv"
 	"log"
+	"net/http"
 	"os"
 	"path"
 	"strings"
@@ -66,13 +67,13 @@ func (c Codec) VarName() string {
 
 func main() {
 
-	table, err := os.Open(path.Join("multicodec", "table.csv"))
+	resp, err := http.Get("https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv")
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer table.Close()
+	defer resp.Body.Close()
 
-	records, err := csv.NewReader(table).ReadAll()
+	records, err := csv.NewReader(resp.Body).ReadAll()
 	if err != nil {
 		log.Fatal(err)
 	}
