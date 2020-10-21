@@ -83,8 +83,6 @@ func _() {
 	_ = x[Decred_Block-224]
 	_ = x[Decred_Tx-225]
 	_ = x[Ipld_Ns-226]
-	_ = x[Ipfs_Ns-227]
-	_ = x[Swarm_Ns-228]
 	_ = x[Ipns_Ns-229]
 	_ = x[Zeronet-230]
 	_ = x[Secp256K1_Pub-231]
