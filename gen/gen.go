@@ -88,7 +88,7 @@ func main() {
 		}
 	}
 
-	tplFileName := "const.go.tpl"
+	tplFileName := "codec.go.tpl"
 	t, err := template.
 		New(tplFileName).
 		Funcs(template.FuncMap{"ToTitle": strings.Title}).
@@ -97,7 +97,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	out, err := os.Create("const.go")
+	out, err := os.Create("codec.go")
 	if err != nil {
 		log.Fatal(err)
 	}
