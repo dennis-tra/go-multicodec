@@ -59,8 +59,8 @@ git clone https://github.com/dennis-tra/go-multicodec.git
 Then run `go generate` in the root of the repository. Currently this will invoke (see [`init.go`](./init.go)):
 
 ```shell
-go run ./gen/
-go fmt ./...
+go run ./gen/gen.go
+gofmt -w codec.go
 stringer -type=Codec -linecomment
 ```
 
