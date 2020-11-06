@@ -1,3 +1,7 @@
+# 🚧 Archived
+
+This project has been moved upstream to [multiformats/go-multicodec](https://github.com/multiformats/go-multicodec/pull/37/commits/4694ef8846ef034239c573af2ef13a54d22d2a9f).
+
 # go-multicodec
 
 ![Multicodecs update](https://github.com/dennis-tra/go-multicodec/workflows/Multicodecs%20update/badge.svg) [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme) [![Go Report Card](https://goreportcard.com/badge/dennis-tra/go-multicodec)](https://goreportcard.com/report/dennis-tra/go-multicodec)
